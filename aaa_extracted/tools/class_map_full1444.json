@@ -1,0 +1,76 @@
+{
+  "description": "YOLOv8-Seg 全量合并(1444) 类别映射配置。目标体系为数据集B的9类。",
+  "target_classes": {
+    "0": "bottle",
+    "1": "box",
+    "2": "can",
+    "3": "cigarette_butt",
+    "4": "food_waste",
+    "5": "other",
+    "6": "paper",
+    "7": "plastic_bag",
+    "8": "wrapper"
+  },
+  "sources": {
+    "dataset_a": {
+      "name": "waste_ds_c3_neg_yolo",
+      "path": "datasets/waste_ds_c3_neg_yolo",
+      "original_classes": {
+        "0": "bottle",
+        "1": "box",
+        "2": "paper",
+        "3": "plastic_bag",
+        "4": "wrapper"
+      },
+      "remap": {
+        "0": 0,
+        "1": 1,
+        "2": 6,
+        "3": 7,
+        "4": 8
+      },
+      "file_prefix": "A"
+    },
+    "dataset_b": {
+      "name": "half_dataset_yolo",
+      "path": "datasets/half_dataset_yolo",
+      "original_classes": {
+        "0": "bottle",
+        "1": "box",
+        "2": "can",
+        "3": "cigarette_butt",
+        "4": "food_waste",
+        "5": "other",
+        "6": "paper",
+        "7": "plastic_bag",
+        "8": "wrapper"
+      },
+      "remap": {
+        "0": 0,
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 5,
+        "6": 6,
+        "7": 7,
+        "8": 8
+      },
+      "file_prefix": "B"
+    }
+  },
+  "output": {
+    "name": "garbage_seg_merged_full1444",
+    "path": "datasets/garbage_seg_merged_full1444",
+    "expected_images": 1444,
+    "splits": ["train", "val", "test"]
+  },
+  "split_policy": {
+    "priority": ["train", "val", "test"],
+    "note": "同一 SHA256 内容组(及近重复组)的全部副本必须进入同一 split；冲突时按 priority 靠前者归属，以保证 val/test 绝对纯净。"
+  },
+  "label_policy": {
+    "preferred_source": "dataset_b",
+    "note": "重复组标注冲突时以 B 的 9 类标注作为候选基准；冲突程度大者进入待人工复核清单，不得视为已通过质量验收。"
+  }
+}

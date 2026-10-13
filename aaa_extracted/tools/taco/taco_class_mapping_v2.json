@@ -1,0 +1,211 @@
+{
+  "meta": {
+    "purpose": "TACO(官方 60 类) -> 项目统一 9 类 的第一阶段【人工裁决版 v2】映射决策",
+    "status": "V2_HUMAN_RATIFIED_PARTIAL",
+    "version": "v2",
+    "date": "2026-10-13",
+    "derived_from": "tools/taco/taco_class_mapping_v1.json (安全候选版) + 人工裁决 7 项",
+    "human_ratification_2026_10_13": {
+      "Aluminium foil(0)": "MAP -> wrapper",
+      "Glass bottle(6)": "MAP -> bottle",
+      "Toilet tube(13)": "MAP -> other",
+      "Drink carton(16)": "MAP -> box",
+      "Paper cup(20)": "MAP -> paper",
+      "Plastic film(36)": "MAP -> wrapper",
+      "Paper straw(56)": "MAP -> other",
+      "still_deferred": ["Aerosol(11)", "Wrapping paper(32)", "Paper bag(34)"]
+    },
+    "revision_2026_10_13_drink_carton": {
+      "change": "Drink carton(16): can -> box",
+      "reason": "人工复议：利乐包为纸板/复合材质、方柱盒形，与 can 的圆柱金属易拉罐几何定义冲突；改归 box 以保持 can 类几何特征纯净。",
+      "effect": "can 实例减少、box 实例增加；该类原本已 MAP，图像保留/排除集合不受影响。"
+    },
+    "annotation_sha256": "ac1ec605c9e1fcda767970de3457c69b4a43b62c02aca8c4c80f51d1b5ae8449",
+    "principles": [
+      "只启用可确证语义的类别；v2 中 PROVISIONAL 层已人工裁决 7 类，剩余 3 类(DEFER)不映射、不由 other 兜底，其所在图像整图排除，避免未映射实例静默变成背景负样本。",
+      "other 正式批准为杂项兜底类，但对 OTHER_CANDIDATE 层 27 类逐类人工审核后才写入（见 other_tier_review）。",
+      "box / bottle / paper 严格与室内 9 类语义一致：纸盒类(Carton 的盒形)归 box；玻璃瓶(材质不符)与纸杯/纸袋/纸吸管/包装纸(形态不符)不并入 bottle / paper。",
+      "目标类别编号与 datasets/garbage_seg_merged_full1444 完全一致，不得改动。",
+      "禁止用矩形框冒充分割轮廓；只写 COCO polygon。"
+    ],
+    "actions": {
+      "MAP": "写入目标类标签",
+      "DEFER": "语义待人工裁决，保持未映射 -> 含该类实例的图像整图排除",
+      "EXCLUDE_STRUCTURAL": "结构性禁用(Unlabeled litter) -> 含该类实例的图像整图排除",
+      "EXCLUDE_UNRESOLVED": "无可靠对应 -> 含该类实例的图像整图排除",
+      "EMPTY": "零实例，无影响"
+    }
+  },
+  "target_classes": {
+    "0": "bottle",
+    "1": "box",
+    "2": "can",
+    "3": "cigarette_butt",
+    "4": "food_waste",
+    "5": "other",
+    "6": "paper",
+    "7": "plastic_bag",
+    "8": "wrapper"
+  },
+  "target_class_source": "datasets/garbage_seg_merged_full1444/data.yaml (只读参照，未修改)",
+  "decisions": {
+    "D1": {
+      "question": "是否正式批准 other 为兜底类？",
+      "verdict": "APPROVED_WITH_PER_CLASS_REVIEW",
+      "effect": "OTHER_CANDIDATE 层 27 类 / 1198 实例经逐类审核后全部写入 other(5)",
+      "rationale": "27 类均为无专用类的杂项垃圾(容器配件/碎玻璃/餐具/绳线/泡沫等)；其余未被批准的杂项仍留在 DEFER，不由 other 兜底。"
+    },
+    "D2": {
+      "question": "Plastic film(36, 451 实例/310 图) 归 plastic_bag 还是 wrapper？",
+      "verdict": "RATIFIED -> wrapper",
+      "effect": "Plastic film -> wrapper(8)；相关图像回收",
+      "rationale": "人工裁决：塑料薄膜归 wrapper。"
+    },
+    "D3": {
+      "question": "Carton 系列是否等同 box？",
+      "verdict": "PARTIAL_CONFIRMED + RATIFIED",
+      "effect": "盒形纸板 -> box；Drink carton -> box(人工复议)；Toilet tube -> other(人工裁决)",
+      "rationale": "人工裁决：Toilet tube 归 other。Drink carton 于 2026-10-13 复议：利乐包材质为纸板/复合、形态为方柱盒，与金属圆柱罐差异大，为保持 can 类「圆柱罐」几何特征纯净，改归 box。"
+    },
+    "D4": {
+      "question": "Glass bottle(6) 是否并入 bottle？",
+      "verdict": "RATIFIED -> bottle",
+      "effect": "Glass bottle -> bottle(0)；相关图像回收",
+      "rationale": "人工裁决：玻璃瓶并入 bottle。"
+    },
+    "D5": {
+      "question": "paper 是否含杯/袋/吸管形态(20/32/34/56)？",
+      "verdict": "PARTIAL_RATIFIED",
+      "effect": "Paper cup -> paper；Paper straw -> other；Paper bag / Wrapping paper 仍 DEFER",
+      "rationale": "人工裁决：纸杯归 paper，纸吸管归 other；纸袋与包装纸未裁决，保持未映射。"
+    },
+    "D6": {
+      "question": "Unlabeled litter(58) 所在 269 张图如何处理？",
+      "verdict": "WHOLE_IMAGE_EXCLUDE",
+      "effect": "269 张整图排除（517 实例不写入）",
+      "rationale": "该类表示已定位但未定类的垃圾；映射为背景=真实垃圾变负样本，映射为 other=语义噪声，故整图排除。"
+    },
+    "D7": {
+      "question": "多部件多边形(114 条标注 / 81 图)合并策略？",
+      "verdict": "ISOLATED_EXCLUDED_V1",
+      "effect": "含多部件 Polygon 的 81 张图在第一版整图隔离排除；转换器内置 largest/split/union-contour 策略以便后续裁决",
+      "rationale": "一行一实例的 YOLO-Seg 格式无法无损表达一实例多部件；三种策略各有缺陷，第一版不预设，交由人工裁决。"
+    }
+  },
+  "category_action": {
+    "0": {"name": "Aluminium foil", "supercategory": "Aluminium foil", "tier": "PROVISIONAL", "action": "MAP", "to": "wrapper", "note": "人工裁决：铝箔包装 -> wrapper"},
+    "1": {"name": "Battery", "supercategory": "Battery", "tier": "OTHER_CANDIDATE", "action": "MAP", "to": "other", "note": "杂项垃圾，无专用类"},
+    "2": {"name": "Aluminium blister pack", "supercategory": "Blister pack", "tier": "OTHER_CANDIDATE", "action": "MAP", "to": "other", "note": "泡罩包装，无专用类"},
+    "3": {"name": "Carded blister pack", "supercategory": "Blister pack", "tier": "OTHER_CANDIDATE", "action": "MAP", "to": "other", "note": "同上，实例极少"},
+    "4": {"name": "Other plastic bottle", "supercategory": "Bottle", "tier": "CONFIRMED_CANDIDATE", "action": "MAP", "to": "bottle", "note": "塑料瓶"},
+    "5": {"name": "Clear plastic bottle", "supercategory": "Bottle", "tier": "CONFIRMED_CANDIDATE", "action": "MAP", "to": "bottle", "note": "透明塑料瓶"},
+    "6": {"name": "Glass bottle", "supercategory": "Bottle", "tier": "PROVISIONAL", "action": "MAP", "to": "bottle", "note": "人工裁决：玻璃瓶 -> bottle"},
+    "7": {"name": "Plastic bottle cap", "supercategory": "Bottle cap", "tier": "OTHER_CANDIDATE", "action": "MAP", "to": "other", "note": "容器配件，非容器本体"},
+    "8": {"name": "Metal bottle cap", "supercategory": "Bottle cap", "tier": "OTHER_CANDIDATE", "action": "MAP", "to": "other", "note": "同上"},
+    "9": {"name": "Broken glass", "supercategory": "Broken glass", "tier": "OTHER_CANDIDATE", "action": "MAP", "to": "other", "note": "碎玻璃，杂项"},
+    "10": {"name": "Food Can", "supercategory": "Can", "tier": "CONFIRMED_CANDIDATE", "action": "MAP", "to": "can", "note": "金属食品罐"},
+    "11": {"name": "Aerosol", "supercategory": "Can", "tier": "PROVISIONAL", "action": "DEFER", "to": null, "note": "喷雾罐 vs 饮料罐语义未定 -> 待裁决"},
+    "12": {"name": "Drink can", "supercategory": "Can", "tier": "CONFIRMED_CANDIDATE", "action": "MAP", "to": "can", "note": "饮料易拉罐，can 主要来源"},
+    "13": {"name": "Toilet tube", "supercategory": "Carton", "tier": "PROVISIONAL", "action": "MAP", "to": "other", "note": "人工裁决：厕纸筒 -> other"},
+    "14": {"name": "Other carton", "supercategory": "Carton", "tier": "CONFIRMED_CANDIDATE", "action": "MAP", "to": "box", "note": "纸板盒"},
+    "15": {"name": "Egg carton", "supercategory": "Carton", "tier": "CONFIRMED_CANDIDATE", "action": "MAP", "to": "box", "note": "蛋盒"},
+    "16": {"name": "Drink carton", "supercategory": "Carton", "tier": "PROVISIONAL", "action": "MAP", "to": "box", "note": "人工复议：饮料纸盒(利乐包) -> box（纸板/复合材质、方柱盒形，不并入圆柱金属 can）"},
+    "17": {"name": "Corrugated carton", "supercategory": "Carton", "tier": "CONFIRMED_CANDIDATE", "action": "MAP", "to": "box", "note": "瓦楞纸箱"},
+    "18": {"name": "Meal carton", "supercategory": "Carton", "tier": "CONFIRMED_CANDIDATE", "action": "MAP", "to": "box", "note": "餐盒纸板包装"},
+    "19": {"name": "Pizza box", "supercategory": "Carton", "tier": "CONFIRMED_CANDIDATE", "action": "MAP", "to": "box", "note": "披萨盒"},
+    "20": {"name": "Paper cup", "supercategory": "Cup", "tier": "PROVISIONAL", "action": "MAP", "to": "paper", "note": "人工裁决：纸杯 -> paper"},
+    "21": {"name": "Disposable plastic cup", "supercategory": "Cup", "tier": "OTHER_CANDIDATE", "action": "MAP", "to": "other", "note": "无 cup 类"},
+    "22": {"name": "Foam cup", "supercategory": "Cup", "tier": "OTHER_CANDIDATE", "action": "MAP", "to": "other", "note": "无 cup 类"},
+    "23": {"name": "Glass cup", "supercategory": "Cup", "tier": "OTHER_CANDIDATE", "action": "MAP", "to": "other", "note": "无 cup 类，实例少"},
+    "24": {"name": "Other plastic cup", "supercategory": "Cup", "tier": "OTHER_CANDIDATE", "action": "MAP", "to": "other", "note": "无 cup 类，实例少"},
+    "25": {"name": "Food waste", "supercategory": "Food waste", "tier": "CONFIRMED_CANDIDATE", "action": "MAP", "to": "food_waste", "note": "直接对应"},
+    "26": {"name": "Glass jar", "supercategory": "Glass jar", "tier": "OTHER_CANDIDATE", "action": "MAP", "to": "other", "note": "罐非瓶，无 jar 类"},
+    "27": {"name": "Plastic lid", "supercategory": "Lid", "tier": "OTHER_CANDIDATE", "action": "MAP", "to": "other", "note": "盖非容器本体"},
+    "28": {"name": "Metal lid", "supercategory": "Lid", "tier": "OTHER_CANDIDATE", "action": "MAP", "to": "other", "note": "同上"},
+    "29": {"name": "Other plastic", "supercategory": "Other plastic", "tier": "CONFIRMED_CANDIDATE", "action": "MAP", "to": "other", "note": "类名即其他塑料"},
+    "30": {"name": "Magazine paper", "supercategory": "Paper", "tier": "CONFIRMED_CANDIDATE", "action": "MAP", "to": "paper", "note": "片状纸质印刷品"},
+    "31": {"name": "Tissues", "supercategory": "Paper", "tier": "CONFIRMED_CANDIDATE", "action": "MAP", "to": "paper", "note": "纸巾"},
+    "32": {"name": "Wrapping paper", "supercategory": "Paper", "tier": "PROVISIONAL", "action": "DEFER", "to": null, "note": "D5：paper/wrapper 命名冲突 -> 待裁决"},
+    "33": {"name": "Normal paper", "supercategory": "Paper", "tier": "CONFIRMED_CANDIDATE", "action": "MAP", "to": "paper", "note": "普通纸张"},
+    "34": {"name": "Paper bag", "supercategory": "Paper bag", "tier": "PROVISIONAL", "action": "DEFER", "to": null, "note": "D5：纸袋形态 -> 待裁决"},
+    "35": {"name": "Plastified paper bag", "supercategory": "Paper bag", "tier": "EMPTY", "action": "EMPTY", "to": null, "note": "零实例"},
+    "36": {"name": "Plastic film", "supercategory": "Plastic bag & wrapper", "tier": "PROVISIONAL", "action": "MAP", "to": "wrapper", "note": "人工裁决：塑料薄膜 -> wrapper"},
+    "37": {"name": "Six pack rings", "supercategory": "Plastic bag & wrapper", "tier": "UNRESOLVED", "action": "EXCLUDE_UNRESOLVED", "to": null, "note": "无可靠对应"},
+    "38": {"name": "Garbage bag", "supercategory": "Plastic bag & wrapper", "tier": "CONFIRMED_CANDIDATE", "action": "MAP", "to": "plastic_bag", "note": "垃圾袋"},
+    "39": {"name": "Other plastic wrapper", "supercategory": "Plastic bag & wrapper", "tier": "CONFIRMED_CANDIDATE", "action": "MAP", "to": "wrapper", "note": "名称直指 wrapper"},
+    "40": {"name": "Single-use carrier bag", "supercategory": "Plastic bag & wrapper", "tier": "CONFIRMED_CANDIDATE", "action": "MAP", "to": "plastic_bag", "note": "一次性购物袋"},
+    "41": {"name": "Polypropylene bag", "supercategory": "Plastic bag & wrapper", "tier": "CONFIRMED_CANDIDATE", "action": "MAP", "to": "plastic_bag", "note": "聚丙烯袋"},
+    "42": {"name": "Crisp packet", "supercategory": "Plastic bag & wrapper", "tier": "CONFIRMED_CANDIDATE", "action": "MAP", "to": "wrapper", "note": "零食包装袋"},
+    "43": {"name": "Spread tub", "supercategory": "Plastic container", "tier": "OTHER_CANDIDATE", "action": "MAP", "to": "other", "note": "塑料容器，无专用类"},
+    "44": {"name": "Tupperware", "supercategory": "Plastic container", "tier": "OTHER_CANDIDATE", "action": "MAP", "to": "other", "note": "塑料保鲜盒"},
+    "45": {"name": "Disposable food container", "supercategory": "Plastic container", "tier": "OTHER_CANDIDATE", "action": "MAP", "to": "other", "note": "一次性餐盒"},
+    "46": {"name": "Foam food container", "supercategory": "Plastic container", "tier": "OTHER_CANDIDATE", "action": "MAP", "to": "other", "note": "发泡餐盒"},
+    "47": {"name": "Other plastic container", "supercategory": "Plastic container", "tier": "OTHER_CANDIDATE", "action": "MAP", "to": "other", "note": "其他塑料容器"},
+    "48": {"name": "Plastic glooves", "supercategory": "Plastic glooves", "tier": "OTHER_CANDIDATE", "action": "MAP", "to": "other", "note": "塑料手套"},
+    "49": {"name": "Plastic utensils", "supercategory": "Plastic utensils", "tier": "OTHER_CANDIDATE", "action": "MAP", "to": "other", "note": "塑料餐具"},
+    "50": {"name": "Pop tab", "supercategory": "Pop tab", "tier": "OTHER_CANDIDATE", "action": "MAP", "to": "other", "note": "罐配件，不并入 can"},
+    "51": {"name": "Rope & strings", "supercategory": "Rope & strings", "tier": "OTHER_CANDIDATE", "action": "MAP", "to": "other", "note": "绳线杂项"},
+    "52": {"name": "Scrap metal", "supercategory": "Scrap metal", "tier": "OTHER_CANDIDATE", "action": "MAP", "to": "other", "note": "金属废料"},
+    "53": {"name": "Shoe", "supercategory": "Shoe", "tier": "OTHER_CANDIDATE", "action": "MAP", "to": "other", "note": "杂项"},
+    "54": {"name": "Squeezable tube", "supercategory": "Squeezable tube", "tier": "OTHER_CANDIDATE", "action": "MAP", "to": "other", "note": "软管包装，杂项"},
+    "55": {"name": "Plastic straw", "supercategory": "Straw", "tier": "OTHER_CANDIDATE", "action": "MAP", "to": "other", "note": "塑料吸管，无专用类"},
+    "56": {"name": "Paper straw", "supercategory": "Straw", "tier": "PROVISIONAL", "action": "MAP", "to": "other", "note": "人工裁决：纸吸管 -> other"},
+    "57": {"name": "Styrofoam piece", "supercategory": "Styrofoam piece", "tier": "OTHER_CANDIDATE", "action": "MAP", "to": "other", "note": "泡沫碎块，杂项"},
+    "58": {"name": "Unlabeled litter", "supercategory": "Unlabeled litter", "tier": "EXCLUDE", "action": "EXCLUDE_STRUCTURAL", "to": null, "note": "D6：已定位未定类，整图排除"},
+    "59": {"name": "Cigarette", "supercategory": "Cigarette", "tier": "CONFIRMED_CANDIDATE", "action": "MAP", "to": "cigarette_butt", "note": "烟蒂，实例最多"}
+  },
+  "other_tier_review": {
+    "policy": "逐类人工审核：仅当该类别在 9 类体系中【没有任何合理的专用目标】时才允许写入 other；若存在合理但未确证的专用目标则降级为 DEFER。",
+    "approved_count": 27,
+    "approved": [
+      {"taco_id": 1, "name": "Battery", "instances": 2, "verdict": "OTHER", "reason": "电池，无专用类"},
+      {"taco_id": 2, "name": "Aluminium blister pack", "instances": 6, "verdict": "OTHER", "reason": "泡罩包装，形态与 wrapper 边界不清，判为杂项"},
+      {"taco_id": 3, "name": "Carded blister pack", "instances": 1, "verdict": "OTHER", "reason": "同上"},
+      {"taco_id": 7, "name": "Plastic bottle cap", "instances": 209, "verdict": "OTHER", "reason": "瓶盖是配件，非容器本体"},
+      {"taco_id": 8, "name": "Metal bottle cap", "instances": 80, "verdict": "OTHER", "reason": "同上"},
+      {"taco_id": 9, "name": "Broken glass", "instances": 138, "verdict": "OTHER", "reason": "碎玻璃"},
+      {"taco_id": 21, "name": "Disposable plastic cup", "instances": 104, "verdict": "OTHER", "reason": "9 类无 cup 类"},
+      {"taco_id": 22, "name": "Foam cup", "instances": 13, "verdict": "OTHER", "reason": "9 类无 cup 类"},
+      {"taco_id": 23, "name": "Glass cup", "instances": 6, "verdict": "OTHER", "reason": "9 类无 cup 类"},
+      {"taco_id": 24, "name": "Other plastic cup", "instances": 2, "verdict": "OTHER", "reason": "9 类无 cup 类"},
+      {"taco_id": 26, "name": "Glass jar", "instances": 6, "verdict": "OTHER", "reason": "罐≠瓶，9 类无 jar 类"},
+      {"taco_id": 27, "name": "Plastic lid", "instances": 77, "verdict": "OTHER", "reason": "盖是配件"},
+      {"taco_id": 28, "name": "Metal lid", "instances": 10, "verdict": "OTHER", "reason": "同上"},
+      {"taco_id": 43, "name": "Spread tub", "instances": 9, "verdict": "OTHER", "reason": "塑料容器"},
+      {"taco_id": 44, "name": "Tupperware", "instances": 4, "verdict": "OTHER", "reason": "塑料容器"},
+      {"taco_id": 45, "name": "Disposable food container", "instances": 38, "verdict": "OTHER", "reason": "塑料容器"},
+      {"taco_id": 46, "name": "Foam food container", "instances": 15, "verdict": "OTHER", "reason": "塑料容器"},
+      {"taco_id": 47, "name": "Other plastic container", "instances": 6, "verdict": "OTHER", "reason": "塑料容器"},
+      {"taco_id": 48, "name": "Plastic glooves", "instances": 4, "verdict": "OTHER", "reason": "杂项"},
+      {"taco_id": 49, "name": "Plastic utensils", "instances": 37, "verdict": "OTHER", "reason": "杂项"},
+      {"taco_id": 50, "name": "Pop tab", "instances": 99, "verdict": "OTHER", "reason": "罐配件，不并入 can"},
+      {"taco_id": 51, "name": "Rope & strings", "instances": 29, "verdict": "OTHER", "reason": "杂项"},
+      {"taco_id": 52, "name": "Scrap metal", "instances": 20, "verdict": "OTHER", "reason": "杂项"},
+      {"taco_id": 53, "name": "Shoe", "instances": 7, "verdict": "OTHER", "reason": "杂项"},
+      {"taco_id": 54, "name": "Squeezable tube", "instances": 7, "verdict": "OTHER", "reason": "杂项"},
+      {"taco_id": 55, "name": "Plastic straw", "instances": 157, "verdict": "OTHER", "reason": "9 类无 straw 类"},
+      {"taco_id": 57, "name": "Styrofoam piece", "instances": 112, "verdict": "OTHER", "reason": "杂项"}
+    ]
+  },
+  "deferred_categories": [11, 32, 34],
+  "excluded_categories": [58],
+  "unresolved_categories": [37],
+  "pending_human_adjudication": [
+    {"taco_id": 34, "name": "Paper bag", "instances": 27, "images": 23, "decision": "D5", "options": ["paper", "plastic_bag", "other"], "impact": "paper/plastic_bag 边界"},
+    {"taco_id": 32, "name": "Wrapping paper", "instances": 12, "images": 11, "decision": "D5", "options": ["paper", "wrapper"], "impact": "paper/wrapper 命名冲突"},
+    {"taco_id": 11, "name": "Aerosol", "instances": 10, "images": 10, "decision": "D3-rel", "options": ["can", "other"], "impact": "can 类是否含喷雾罐"}
+  ],
+  "multipart_policy_pending": {
+    "id": "D7",
+    "annotations": 114,
+    "images": 81,
+    "current": "exclude (整图隔离)",
+    "options": ["largest", "split", "union-contour", "exclude"]
+  },
+  "ratified_2026_10_13": {
+    "Aluminium foil(0)": "wrapper", "Glass bottle(6)": "bottle", "Toilet tube(13)": "other",
+    "Drink carton(16)": "box", "Paper cup(20)": "paper", "Plastic film(36)": "wrapper",
+    "Paper straw(56)": "other"
+  },
+  "note": "v2 = v1 安全候选版 + 2026-10-13 人工裁决 7 项（其中 Drink carton(16) 于同日复议由 can 改判 box）。剩余 3 类仍 DEFER（整图排除）；多部件策略仍为 exclude。未裁决项不得为扩大数据量擅自改判。"
+}

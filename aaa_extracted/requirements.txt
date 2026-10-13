@@ -1,0 +1,14 @@
+# 实测通过的运行环境（非严格锁定，>= 为最低验证版本）
+#   Python  3.12.15
+#   CUDA    13.0
+#   GPU     NVIDIA GeForce RTX 5090 (32 GB)
+#   测试日期 2026-10-13
+#
+# 安装：pip install -r requirements.txt
+# 注：torch 的 CUDA 版本必须与本机驱动匹配，如不匹配请先按官方指引单独安装 torch。
+
+ultralytics>=8.4.176    # YOLOv8-Seg 训练 / 推理 / 验证
+torch>=2.14.1           # 通常由 ultralytics 自动拉取
+numpy>=2.5.4            # 分割掩膜统计
+pillow>=12.3.0          # tools/taco/*.py 的 from PIL import Image
+requests>=2.34.2        # tools/taco/download_taco_official.py 的逐图下载

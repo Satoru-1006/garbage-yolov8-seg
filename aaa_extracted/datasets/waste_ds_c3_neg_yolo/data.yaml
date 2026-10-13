@@ -1,0 +1,10 @@
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: bottle
+  1: box
+  2: paper
+  3: plastic_bag
+  4: wrapper

@@ -1,0 +1,201 @@
+{
+ "out_dir": "datasets/taco/yolo_seg",
+ "class_scheme_matches_indoor": true,
+ "class_names": {
+  "0": "bottle",
+  "1": "box",
+  "2": "can",
+  "3": "cigarette_butt",
+  "4": "food_waste",
+  "5": "other",
+  "6": "paper",
+  "7": "plastic_bag",
+  "8": "wrapper"
+ },
+ "pairing": {
+  "train": {
+   "images": 917,
+   "labels": 917,
+   "images_without_label": [],
+   "labels_without_image": []
+  },
+  "val": {
+   "images": 114,
+   "labels": 114,
+   "images_without_label": [],
+   "labels_without_image": []
+  },
+  "test": {
+   "images": 114,
+   "labels": 114,
+   "images_without_label": [],
+   "labels_without_image": []
+  }
+ },
+ "total_images": 1145,
+ "ultralytics_parse_failures": [],
+ "n_ultralytics_parse_failures": 0,
+ "illegal_labels": [],
+ "n_illegal_labels": 0,
+ "residual_exif_orientation": [],
+ "n_residual_exif": 0,
+ "stored_size_mismatch": [],
+ "n_stored_size_mismatch": 0,
+ "empty_label_files": 0,
+ "polygon_points_min": 3,
+ "polygon_points_max": 283,
+ "instances_per_class_per_split": {
+  "train": {
+   "wrapper": 375,
+   "other": 753,
+   "box": 120,
+   "cigarette_butt": 283,
+   "bottle": 210,
+   "can": 130,
+   "paper": 97,
+   "plastic_bag": 44,
+   "food_waste": 2
+  },
+  "val": {
+   "bottle": 59,
+   "wrapper": 40,
+   "other": 102,
+   "paper": 17,
+   "cigarette_butt": 58,
+   "can": 68,
+   "box": 25,
+   "plastic_bag": 7,
+   "food_waste": 3
+  },
+  "test": {
+   "wrapper": 57,
+   "cigarette_butt": 27,
+   "bottle": 9,
+   "other": 72,
+   "can": 3,
+   "box": 45,
+   "plastic_bag": 12,
+   "paper": 7
+  }
+ },
+ "instances_per_class_total": {
+  "bottle": 278,
+  "box": 190,
+  "can": 201,
+  "cigarette_butt": 368,
+  "food_waste": 5,
+  "other": 927,
+  "paper": 121,
+  "plastic_bag": 63,
+  "wrapper": 472
+ },
+ "images_per_class_per_split": {
+  "train": {
+   "bottle": 172,
+   "box": 100,
+   "can": 86,
+   "cigarette_butt": 114,
+   "food_waste": 2,
+   "other": 492,
+   "paper": 81,
+   "plastic_bag": 32,
+   "wrapper": 305
+  },
+  "val": {
+   "bottle": 45,
+   "box": 13,
+   "can": 42,
+   "cigarette_butt": 24,
+   "food_waste": 3,
+   "other": 58,
+   "paper": 12,
+   "plastic_bag": 5,
+   "wrapper": 25
+  },
+  "test": {
+   "bottle": 9,
+   "box": 27,
+   "can": 3,
+   "cigarette_butt": 10,
+   "food_waste": 0,
+   "other": 55,
+   "paper": 7,
+   "plastic_bag": 6,
+   "wrapper": 40
+  }
+ },
+ "total_label_rows": 2625,
+ "cross_split_identical_images": [],
+ "cross_split_near_duplicate_pairs": [],
+ "excluded_content_leaked_into_kept": {},
+ "duplicate_annotation_ids_preserved": true,
+ "duplicate_annotation_id_detail": [
+  {
+   "annotation_id": 309,
+   "annotation_index": 308,
+   "image_id": 93,
+   "file_name": "batch_1/000120.JPG",
+   "category_id": 59,
+   "category_name": "Cigarette",
+   "image_kept": true
+  },
+  {
+   "annotation_id": 309,
+   "annotation_index": 309,
+   "image_id": 101,
+   "file_name": "batch_10/000000.jpg",
+   "category_id": 5,
+   "category_name": "Clear plastic bottle",
+   "image_kept": true
+  },
+  {
+   "annotation_id": 4040,
+   "annotation_index": 4039,
+   "image_id": 1281,
+   "file_name": "batch_7/000123.JPG",
+   "category_id": 59,
+   "category_name": "Cigarette",
+   "image_kept": true
+  },
+  {
+   "annotation_id": 4040,
+   "annotation_index": 4040,
+   "image_id": 1300,
+   "file_name": "batch_8/000000.jpg",
+   "category_id": 58,
+   "category_name": "Unlabeled litter",
+   "image_kept": false
+  }
+ ],
+ "reconciliation": {
+  "input_annotations": 4784,
+  "written": 2625,
+  "dropped_image_excluded": 2159,
+  "dropped_degenerate_or_clipped_away": 0,
+  "sum_equals_input": true
+ },
+ "reconciliation_ok": true,
+ "instance_histogram_matches_summary": true,
+ "roundtrip_mismatches": [],
+ "n_roundtrip_mismatches": 0,
+ "clipping_breakdown": {
+  "exactly_on_boundary": 21,
+  "negative_vertex": 4
+ },
+ "hard_failures": [],
+ "DATA_QUALITY_ACCEPTANCE": "PASS",
+ "visualizations": [
+  "datasets/taco/yolo_seg/viz/class_0_bottle.png",
+  "datasets/taco/yolo_seg/viz/class_1_box.png",
+  "datasets/taco/yolo_seg/viz/class_2_can.png",
+  "datasets/taco/yolo_seg/viz/class_3_cigarette_butt.png",
+  "datasets/taco/yolo_seg/viz/class_4_food_waste.png",
+  "datasets/taco/yolo_seg/viz/class_5_other.png",
+  "datasets/taco/yolo_seg/viz/class_6_paper.png",
+  "datasets/taco/yolo_seg/viz/class_7_plastic_bag.png",
+  "datasets/taco/yolo_seg/viz/class_8_wrapper.png",
+  "datasets/taco/yolo_seg/viz/ratified_mapping_check.png",
+  "datasets/taco/yolo_seg/viz/exif_transposed_samples.png",
+  "datasets/taco/yolo_seg/viz/crowded_samples.png"
+ ]
+}

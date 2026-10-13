@@ -1,0 +1,42 @@
+# ================= 数据集图片与原始归档 =================
+# 仅入库 labels / manifests / data.yaml，图片不入库
+# 原因：体积（约 9.2 GB）+ 第三方图片版权
+datasets/**/images/
+datasets/**/viz/
+datasets/taco/raw/*
+# 例外：保留 TACO 来源溯源材料（体积小，是复现依据；不含图片与归档）
+!datasets/taco/raw/SOURCE.md
+!datasets/taco/raw/*.log
+!datasets/taco/raw/annotations_from_release.json
+!datasets/taco/raw/release_metadata/
+*.zip
+
+# ================= 模型权重 =================
+# 建议通过 GitHub Release 分发，或使用 Git LFS
+*.pt
+*.pth
+*.onnx
+*.engine
+*.torchscript
+runs/**/weights/
+
+# ================= 训练产物 =================
+runs/**/train*/
+runs/**/predict*/
+wandb/
+*.tfevents
+
+# ================= Python =================
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# ================= 编辑器 / 系统 =================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

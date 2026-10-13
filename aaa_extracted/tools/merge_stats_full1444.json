@@ -1,0 +1,55 @@
+{
+  "source_a_files": 694,
+  "source_b_files": 750,
+  "total_images": 1444,
+  "unique_content": 1063,
+  "units": 423,
+  "burst_edges": 969,
+  "near_dup_pairs": 33,
+  "near_dup_components": 1035,
+  "conflict_groups": 282,
+  "conflict_high": 141,
+  "conflict_medium": 124,
+  "conflict_low": 17,
+  "inner_inconsistent_groups": 24,
+  "unresolved_review_items": 289,
+  "duplicate_groups": 343,
+  "split_kept": 582,
+  "split_moved": 862,
+  "split_units_moved": 150,
+  "split_distribution": {
+    "train": 1154,
+    "val": 145,
+    "test": 145
+  },
+  "split_ratio": {
+    "train": 0.7992,
+    "val": 0.1004,
+    "test": 0.1004
+  },
+  "leak_sha_groups": 0,
+  "leak_units": 0,
+  "units_with_mixed_source_split": 150,
+  "empty_labels": 242,
+  "invalid_polygon": 0,
+  "label_source_used": {
+    "waste_ds_c3_neg_yolo": 348,
+    "half_dataset_yolo": 1096
+  },
+  "class_instance_count": {
+    "bottle": 99,
+    "box": 584,
+    "can": 9,
+    "cigarette_butt": 121,
+    "food_waste": 26,
+    "other": 1313,
+    "paper": 674,
+    "plastic_bag": 774,
+    "wrapper": 215
+  },
+  "written": {
+    "train": 1154,
+    "test": 145,
+    "val": 145
+  }
+}

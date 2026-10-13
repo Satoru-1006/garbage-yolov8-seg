@@ -1,0 +1,1 @@
+[25/1500] ok=5 fail=20 elapsed=15s[50/1500] ok=5 fail=45 elapsed=29s[75/1500] ok=6 fail=69 elapsed=43s[100/1500] ok=7 fail=93 elapsed=57s[125/1500] ok=7 fail=118 elapsed=71s
