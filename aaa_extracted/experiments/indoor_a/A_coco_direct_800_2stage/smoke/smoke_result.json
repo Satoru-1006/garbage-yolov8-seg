@@ -1,0 +1,515 @@
+{
+  "orig_nc": 80,
+  "coco_params": 27285968,
+  "dataset_nc": 9,
+  "class_names": [
+    "bottle",
+    "box",
+    "can",
+    "cigarette_butt",
+    "food_waste",
+    "other",
+    "paper",
+    "plastic_bag",
+    "wrapper"
+  ],
+  "actual_args": {
+    "imgsz": 800,
+    "batch": 16,
+    "freeze": 10,
+    "mask_ratio": 2,
+    "copy_paste": 0.1,
+    "multi_scale": 0.1,
+    "overlap_mask": true,
+    "mosaic": 0.3,
+    "mixup": 0.0,
+    "degrees": 8.0,
+    "translate": 0.1,
+    "scale": 0.25,
+    "fliplr": 0.5,
+    "flipud": 0.0,
+    "hsv_h": 0.015,
+    "hsv_s": 0.35,
+    "hsv_v": 0.3,
+    "optimizer": "AdamW",
+    "lr0": 0.001,
+    "weight_decay": 0.0005,
+    "close_mosaic": 0,
+    "deterministic": true,
+    "amp": true,
+    "seed": 42,
+    "workers": 2
+  },
+  "optimizer_actual": {
+    "class": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.0005,
+    "n_param_groups": 3
+  },
+  "amp_check": true,
+  "freeze_layer_names": [
+    "model.0.",
+    "model.1.",
+    "model.2.",
+    "model.3.",
+    "model.4.",
+    "model.5.",
+    "model.6.",
+    "model.7.",
+    "model.8.",
+    "model.9.",
+    ".dfl"
+  ],
+  "n_frozen_tensors": 118,
+  "frozen_layer_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "frozen_layer_types": {
+    "0": "Conv",
+    "1": "Conv",
+    "2": "C2f",
+    "3": "Conv",
+    "4": "C2f",
+    "5": "Conv",
+    "6": "C2f",
+    "7": "Conv",
+    "8": "C2f",
+    "9": "SPPF"
+  },
+  "frozen_params": 11855872,
+  "trainable_params": 15388987,
+  "trainable_ratio": 0.5648,
+  "transform_chain": [
+    "Compose",
+    "Mosaic",
+    "CopyPaste",
+    "RandomPerspective",
+    "MixUp",
+    "Compose",
+    "Mosaic",
+    "CopyPaste",
+    "RandomPerspective",
+    "CutMix",
+    "Compose",
+    "Mosaic",
+    "CopyPaste",
+    "RandomPerspective",
+    "Albumentations",
+    "RandomHSV",
+    "RandomFlip",
+    "RandomFlip",
+    "Format"
+  ],
+  "copy_paste_assembled": true,
+  "mosaic_assembled": true,
+  "aug_align": [
+    {
+      "index": 501,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 5,
+      "mask_unique_nonzero": 5,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        1,
+        7
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 101,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 12,
+      "mask_unique_nonzero": 12,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        1
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 108,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 9,
+      "mask_unique_nonzero": 9,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        1,
+        7
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 846,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 3,
+      "mask_unique_nonzero": 3,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        1,
+        5,
+        7
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 799,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 1,
+      "mask_unique_nonzero": 1,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        7
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 746,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 3,
+      "mask_unique_nonzero": 3,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        1,
+        7
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 604,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 0,
+      "mask_unique_nonzero": 0,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 876,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 2,
+      "mask_unique_nonzero": 2,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        3,
+        5
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 907,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 9,
+      "mask_unique_nonzero": 9,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        1,
+        7
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 827,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 1,
+      "mask_unique_nonzero": 1,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        6
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 494,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 3,
+      "mask_unique_nonzero": 3,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        5
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 98,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 13,
+      "mask_unique_nonzero": 13,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        5,
+        6
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 982,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 3,
+      "mask_unique_nonzero": 3,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        6,
+        7
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 1121,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 1,
+      "mask_unique_nonzero": 1,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        7
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 882,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 8,
+      "mask_unique_nonzero": 8,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        5,
+        7
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 231,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 3,
+      "mask_unique_nonzero": 3,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        5,
+        6
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    }
+  ],
+  "aug_all_match": true,
+  "aug_max_class_id": 7,
+  "mask_bbox_iou_mean": 0.7814,
+  "mask_bbox_iou_min": 0.0217,
+  "mask_ratio_effective": 2.0,
+  "aug_mismatch_samples": 0,
+  "aug_viz": "/home/xmv/garbage_yolov8_seg/indoor_ab/A_coco_direct_800_2stage/smoke/augmented_samples.jpg",
+  "batch_probes": [
+    {
+      "batch": 16,
+      "status": "OK",
+      "loss_total": 163.28712463378906,
+      "loss_items": {
+        "box_loss": 1.2026357650756836,
+        "seg_loss": 2.0620415210723877,
+        "cls_loss": 5.820619106292725,
+        "dfl_loss": 1.1201488971710205,
+        "sem_loss": 0.0
+      },
+      "peak_mem_MiB": 9152.8,
+      "n_trainable_actual": 15388987,
+      "n_instances_in_batch": 42,
+      "seconds": 1.1
+    }
+  ],
+  "selected_batch": 16,
+  "peak_mem_MiB": 9152.8,
+  "loss_finite": true,
+  "env": {
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "gpu_mem_GiB": 31.34,
+    "cc": "12.0",
+    "torch": "2.14.1+cu130",
+    "cuda": "13.0",
+    "ultralytics": "8.4.176",
+    "python": "3.12.15"
+  },
+  "label_smoothing_supported": false
+}

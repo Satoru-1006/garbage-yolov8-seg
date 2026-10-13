@@ -33,6 +33,13 @@ taco_baseline_v2/train/*.jpg
 taco_baseline_v2/train/weights/
 taco_baseline_v2/*.log
 
+# Indoor-A experiment visualisations, logs and weights are local-only; keep
+# the curated report, metrics, configs and audit JSON files.
+experiments/**/weights/
+experiments/**/*.png
+experiments/**/*.jpg
+experiments/**/*.log
+
 # ================= Python =================
 __pycache__/
 *.py[cod]

@@ -1,0 +1,309 @@
+{
+  "structure": {
+    "train": {
+      "images": 1154,
+      "labels": 1154
+    },
+    "val": {
+      "images": 145,
+      "labels": 145
+    },
+    "test": {
+      "images": 145,
+      "labels": 145
+    }
+  },
+  "total_images": 1444,
+  "decode_fail": 0,
+  "unique_sha256": 1063,
+  "label_format": {
+    "empty_label_files": 242,
+    "total_instances": 3815,
+    "bad_class_ids": {},
+    "out_of_bound_coords": 0,
+    "degenerate_polygons": 0,
+    "tiny_instances(<0.05%area)": 1161,
+    "small_instances(0.05-0.5%area)": 1569,
+    "parse_errors": {}
+  },
+  "is_segmentation_format": true,
+  "source_mapping": {
+    "A_files": 694,
+    "B_files": 750,
+    "A_classids_observed": {
+      "0": 79,
+      "1": 460,
+      "2": 444,
+      "3": 351,
+      "4": 82
+    },
+    "B_classids_observed": {
+      "0": 36,
+      "1": 184,
+      "2": 6,
+      "3": 87,
+      "4": 17,
+      "5": 958,
+      "6": 287,
+      "7": 372,
+      "8": 120
+    },
+    "A_classids_out_of_5cls": 0,
+    "B_classids_out_of_9cls": 0
+  },
+  "remap_verify": {
+    "checked_files": 0,
+    "mismatch": 0
+  },
+  "duplicates_leakage": {
+    "sha_dup_groups": 343,
+    "sha_cross_split_groups": 0,
+    "near_dup_pairs(hamming<=5)": 171,
+    "near_dup_cross_split_pairs": 27,
+    "same_content_in_both_A_and_B": 323
+  },
+  "per_class": {
+    "bottle": {
+      "id": 0,
+      "instances": 99,
+      "images": 71,
+      "split_instances": {
+        "train": 75,
+        "val": 9,
+        "test": 15
+      },
+      "area_pct_median": 0.2716,
+      "area_pct_mean": 0.6685,
+      "sqrt_area_px_median": 97.5,
+      "small_share(<0.5%)": 0.6667,
+      "tiny_instances(<0.05%)": 9
+    },
+    "box": {
+      "id": 1,
+      "instances": 584,
+      "images": 216,
+      "split_instances": {
+        "train": 480,
+        "val": 41,
+        "test": 63
+      },
+      "area_pct_median": 0.4741,
+      "area_pct_mean": 1.2965,
+      "sqrt_area_px_median": 107.3,
+      "small_share(<0.5%)": 0.5086,
+      "tiny_instances(<0.05%)": 154
+    },
+    "can": {
+      "id": 2,
+      "instances": 9,
+      "images": 9,
+      "split_instances": {
+        "train": 9,
+        "val": 0,
+        "test": 0
+      },
+      "area_pct_median": 0.2594,
+      "area_pct_mean": 0.2703,
+      "sqrt_area_px_median": 80.9,
+      "small_share(<0.5%)": 1.0,
+      "tiny_instances(<0.05%)": 0
+    },
+    "cigarette_butt": {
+      "id": 3,
+      "instances": 121,
+      "images": 66,
+      "split_instances": {
+        "train": 97,
+        "val": 11,
+        "test": 13
+      },
+      "area_pct_median": 0.0329,
+      "area_pct_mean": 0.0511,
+      "sqrt_area_px_median": 32.8,
+      "small_share(<0.5%)": 1.0,
+      "tiny_instances(<0.05%)": 83
+    },
+    "food_waste": {
+      "id": 4,
+      "instances": 26,
+      "images": 18,
+      "split_instances": {
+        "train": 19,
+        "val": 1,
+        "test": 6
+      },
+      "area_pct_median": 0.0672,
+      "area_pct_mean": 0.468,
+      "sqrt_area_px_median": 65.2,
+      "small_share(<0.5%)": 0.9231,
+      "tiny_instances(<0.05%)": 9
+    },
+    "other": {
+      "id": 5,
+      "instances": 1313,
+      "images": 451,
+      "split_instances": {
+        "train": 1108,
+        "val": 118,
+        "test": 87
+      },
+      "area_pct_median": 0.0449,
+      "area_pct_mean": 0.2278,
+      "sqrt_area_px_median": 32.9,
+      "small_share(<0.5%)": 0.9132,
+      "tiny_instances(<0.05%)": 692
+    },
+    "paper": {
+      "id": 6,
+      "instances": 674,
+      "images": 371,
+      "split_instances": {
+        "train": 564,
+        "val": 61,
+        "test": 49
+      },
+      "area_pct_median": 0.1258,
+      "area_pct_mean": 0.3287,
+      "sqrt_area_px_median": 59.2,
+      "small_share(<0.5%)": 0.8353,
+      "tiny_instances(<0.05%)": 136
+    },
+    "plastic_bag": {
+      "id": 7,
+      "instances": 774,
+      "images": 465,
+      "split_instances": {
+        "train": 619,
+        "val": 87,
+        "test": 68
+      },
+      "area_pct_median": 0.8899,
+      "area_pct_mean": 1.7972,
+      "sqrt_area_px_median": 162.4,
+      "small_share(<0.5%)": 0.3463,
+      "tiny_instances(<0.05%)": 55
+    },
+    "wrapper": {
+      "id": 8,
+      "instances": 215,
+      "images": 146,
+      "split_instances": {
+        "train": 190,
+        "val": 12,
+        "test": 13
+      },
+      "area_pct_median": 0.175,
+      "area_pct_mean": 0.5229,
+      "sqrt_area_px_median": 67.7,
+      "small_share(<0.5%)": 0.8512,
+      "tiny_instances(<0.05%)": 23
+    }
+  },
+  "empty_labels": {
+    "total": 242,
+    "per_split": {
+      "train": 187,
+      "val": 24,
+      "test": 31
+    },
+    "ratio": 0.1676
+  },
+  "image_sizes": {
+    "1706x1279": 220,
+    "854x640": 135,
+    "640x854": 105,
+    "1280x960": 98,
+    "1080x1920": 83,
+    "1280x1280": 59,
+    "810x1440": 56,
+    "1279x1706": 53,
+    "1280x1707": 50,
+    "4096x3072": 42
+  },
+  "scarcity_ranking": [
+    {
+      "class": "can",
+      "instances": 9,
+      "splits": {
+        "train": 9,
+        "val": 0,
+        "test": 0
+      }
+    },
+    {
+      "class": "food_waste",
+      "instances": 26,
+      "splits": {
+        "train": 19,
+        "val": 1,
+        "test": 6
+      }
+    },
+    {
+      "class": "bottle",
+      "instances": 99,
+      "splits": {
+        "train": 75,
+        "val": 9,
+        "test": 15
+      }
+    },
+    {
+      "class": "cigarette_butt",
+      "instances": 121,
+      "splits": {
+        "train": 97,
+        "val": 11,
+        "test": 13
+      }
+    },
+    {
+      "class": "wrapper",
+      "instances": 215,
+      "splits": {
+        "train": 190,
+        "val": 12,
+        "test": 13
+      }
+    },
+    {
+      "class": "box",
+      "instances": 584,
+      "splits": {
+        "train": 480,
+        "val": 41,
+        "test": 63
+      }
+    },
+    {
+      "class": "paper",
+      "instances": 674,
+      "splits": {
+        "train": 564,
+        "val": 61,
+        "test": 49
+      }
+    },
+    {
+      "class": "plastic_bag",
+      "instances": 774,
+      "splits": {
+        "train": 619,
+        "val": 87,
+        "test": 68
+      }
+    },
+    {
+      "class": "other",
+      "instances": 1313,
+      "splits": {
+        "train": 1108,
+        "val": 118,
+        "test": 87
+      }
+    }
+  ],
+  "classes_unevaluable_in_val_or_test": [
+    "can"
+  ]
+}

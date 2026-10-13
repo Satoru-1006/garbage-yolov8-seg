@@ -54,6 +54,18 @@
 ├── train_stage1_taco_v2.py          # TACO 9 类 YOLOv8m-Seg 基线训练入口
 └── taco_baseline_v2/train/           # 参数与 results.csv（不含权重和图像）
 ```
+
+实验 A（COCO 直接微调两阶段）的核心脚本与记录位于：
+
+```text
+├── tools/indoor_a/                   # 独立审计、冒烟、训练、评估脚本
+└── experiments/indoor_a/
+    └── A_coco_direct_800_2stage/     # 报告、审计 JSON、参数与 results.csv
+```
+
+该实验同样不入库图片、权重、曲线图和完整训练日志；详见该目录的
+`README.md`。原始训练记录显示 test split 未参与训练或验证调参，但该实验结果
+仍属于基线记录，不等同于部署或生产性能认证。
 ```
 
 ---
