@@ -10,11 +10,14 @@ Planned sources include TACO, GSA2D, DWSD, Cigarette Butt Dataset, and subsequen
 
 - `convert_labelme_to_yolo_seg.py`: deterministic LabelMe polygon to YOLO segmentation conversion script.
 - `GARBAGE_YOLOV8_SEG_PROJECT.md`: current audit summary, evidence boundaries, and next stages.
+- `aaa_extracted/`: packaged TACO audit, 9-class YOLO-Seg labels/manifests, conversion tools, and the recorded TACO baseline training code/metrics.
 
 Local datasets, raw archives, generated labels/images, model weights, and experiment outputs are intentionally excluded from this repository.
 
 ## Current status
 
-`DATA_PREPARATION_PENDING; TRAINING_NOT_RUN`
+`TACO_BASELINE_RECORDED; MERGED_DATASET_TRAINING_NOT_RUN`
 
-The current conversion evidence establishes file-format conversion only. It does not establish annotation quality, duplicate/leakage status, cross-dataset ontology compatibility, remote runtime readiness, or training success.
+The TACO baseline record is limited to its 114-image validation split. It does not establish
+full merged-dataset readiness, test-set performance, annotation semantics, cross-domain
+generalisation, deployment safety, or production performance.

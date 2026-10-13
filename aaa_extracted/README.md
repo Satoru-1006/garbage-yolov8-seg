@@ -3,8 +3,9 @@
 面向垃圾图像的统一 **9 类** YOLOv8-Seg 数据集构建流水线，包含多源数据集的
 类别对齐、合并审计、COCO→YOLO 分割标注转换，以及可追溯的完整性校验清单。
 
-> **状态：进行中（PROVISIONAL）。** 合并数据集尚未通过数据质量验收，
-> 尚未在项目数据集上启动正式训练。详见文末「状态」。
+> **状态：进行中（PROVISIONAL）。** TACO 候选子集已完成数据质量验收并记录了
+> 一个 YOLOv8m-Seg 基线；合并数据集尚未通过数据质量验收，也尚未训练。
+> 详见文末「状态」和 `taco_baseline_v2/README.md`。
 
 ---
 
@@ -46,6 +47,13 @@
 │   ├── half_dataset_yolo/           # 源数据集 B（labels + data.yaml）
 │   └── waste_ds_c3_neg_yolo/        # 源数据集 A（labels + data.yaml）
 └── runs/segment/runs/smoke/         # 流程自检产物（曲线图、results.csv）
+
+另有：
+
+```text
+├── train_stage1_taco_v2.py          # TACO 9 类 YOLOv8m-Seg 基线训练入口
+└── taco_baseline_v2/train/           # 参数与 results.csv（不含权重和图像）
+```
 ```
 
 ---
@@ -140,11 +148,15 @@ pip install -r requirements.txt
 |---|---|
 | TACO → YOLO-Seg 转换 | 数据质量验收 **PASS**，`READY_FOR_STAGE1 = YES` |
 | 合并数据集 `garbage_seg_merged_full1444` | **PROVISIONAL**，存在待人工复核项，**未通过数据质量验收** |
-| 正式训练 | **尚未开始** |
+| TACO 9 类基线训练 | **已完成**（74 epochs，best epoch 59；仅验证集） |
+| 合并数据集正式训练 | **尚未开始** |
 
 `runs/segment/runs/smoke/yolov8m_seg/` 是**流程自检（smoke test）**：1 epoch、
 batch 2、跑在 ultralytics 自带的 `coco8-seg` 示例集上，仅用于确认训练链路可跑通。
 **其中的 mAP 等指标无任何实际意义，不构成项目成果。**
+
+TACO 基线的实际验证结果记录在 `taco_baseline_v2/README.md`；该结果使用 114 张
+TACO val 图像，未使用 test split，不代表跨域泛化或部署性能。
 
 ---
 
