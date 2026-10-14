@@ -1,0 +1,73 @@
+{
+  "version": "v3",
+  "source_images": 1444,
+  "unique_content": 1063,
+  "duplicate_content_groups_removed": 343,
+  "split_counts": {
+    "val": 106,
+    "test": 107,
+    "train": 850
+  },
+  "split_targets": {
+    "train": 850,
+    "val": 106,
+    "test": 107
+  },
+  "session_units": 225,
+  "session_gap_seconds": 60.0,
+  "near_dup_hamming": 5,
+  "burst_seconds": 3.0,
+  "class_distribution": {
+    "train": {
+      "bottle": 55,
+      "box": 275,
+      "can": 4,
+      "cigarette_butt": 70,
+      "food_waste": 12,
+      "other": 706,
+      "paper": 412,
+      "plastic_bag": 433,
+      "wrapper": 128
+    },
+    "val": {
+      "bottle": 5,
+      "box": 132,
+      "can": 1,
+      "cigarette_butt": 9,
+      "food_waste": 2,
+      "other": 69,
+      "paper": 37,
+      "plastic_bag": 56,
+      "wrapper": 9
+    },
+    "test": {
+      "bottle": 9,
+      "box": 15,
+      "can": 1,
+      "cigarette_butt": 8,
+      "food_waste": 2,
+      "other": 72,
+      "paper": 60,
+      "plastic_bag": 67,
+      "wrapper": 17
+    }
+  },
+  "empty_labels": {
+    "test": 20,
+    "val": 24,
+    "train": 143
+  },
+  "annotation_review_total": 637,
+  "annotation_review_high": 193,
+  "ai_decisions": {
+    "USE_NONEMPTY": 1,
+    "PENDING_HUMAN": 9,
+    "KEEP_EMPTY": 4
+  },
+  "manifest_check": {
+    "expected_rows": 1444,
+    "records": 1444
+  },
+  "training": "NOT_RUN",
+  "training_readiness": "BLOCKED_UNRESOLVED_ANNOTATIONS"
+}

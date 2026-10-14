@@ -1,0 +1,83 @@
+{
+  "checks_total": 16,
+  "checks_passed": 14,
+  "checks_failed": 2,
+  "checks": {
+    "train_image_count": true,
+    "train_label_count": true,
+    "val_image_count": true,
+    "val_label_count": true,
+    "test_image_count": true,
+    "test_label_count": true,
+    "total_images": true,
+    "image_label_pairing": true,
+    "image_decode": true,
+    "label_syntax": true,
+    "exact_content_unique_across_all_splits": true,
+    "near_duplicate_cross_split": true,
+    "burst_cross_split": true,
+    "session_60s_cross_split": true,
+    "human_admission_gate": false,
+    "training_readiness": false
+  },
+  "counts": {
+    "train": 850,
+    "val": 106,
+    "test": 107
+  },
+  "total_images": 1063,
+  "empty_labels": {
+    "train": 143,
+    "val": 24,
+    "test": 20
+  },
+  "invalid_label_records": 0,
+  "decode_failures": 0,
+  "exact_duplicate_groups": 0,
+  "near_duplicate_cross_split_pairs": 0,
+  "burst_cross_split_pairs": 0,
+  "session_60s_cross_split_pairs": 0,
+  "class_distribution": {
+    "train": {
+      "bottle": 55,
+      "box": 275,
+      "can": 4,
+      "cigarette_butt": 70,
+      "food_waste": 12,
+      "other": 706,
+      "paper": 412,
+      "plastic_bag": 433,
+      "wrapper": 128
+    },
+    "val": {
+      "bottle": 5,
+      "box": 132,
+      "can": 1,
+      "cigarette_butt": 9,
+      "food_waste": 2,
+      "other": 69,
+      "paper": 37,
+      "plastic_bag": 56,
+      "wrapper": 9
+    },
+    "test": {
+      "bottle": 9,
+      "box": 15,
+      "can": 1,
+      "cigarette_butt": 8,
+      "food_waste": 2,
+      "other": 72,
+      "paper": 60,
+      "plastic_bag": 67,
+      "wrapper": 17
+    }
+  },
+  "pending_human_groups": 637,
+  "pending_high_groups": 193,
+  "ai_decisions": {
+    "USE_NONEMPTY": 1,
+    "KEEP_EMPTY": 4
+  },
+  "training": "NOT_RUN",
+  "training_readiness": "BLOCKED_UNRESOLVED_ANNOTATIONS"
+}
