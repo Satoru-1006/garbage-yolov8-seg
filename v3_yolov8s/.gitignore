@@ -1,0 +1,17 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+*.pt
+*.pth
+*.onnx
+*.engine
+images/
+labels/
+datasets/
+runs/
+experiments/
+outputs/
+*.zip
+.DS_Store
+configs/sources.local.yaml
+*.local.yaml

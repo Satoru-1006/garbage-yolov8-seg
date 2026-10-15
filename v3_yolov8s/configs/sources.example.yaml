@@ -1,0 +1,67 @@
+# Copy to configs/sources.local.yaml and update on the RTX5090 server.
+# Never commit sources.local.yaml or proprietary data.
+# Sources must be ORIGINAL train/val partitions, not their union.
+# Each source's data.yaml 'names' is the authoritative SOURCE class order.
+# canonical name == target name can be mapped implicitly; all other source
+# class names seen in labels MUST be explicitly mapped; no silent 'other'.
+# Set license_ok=true only after you have checked terms for this particular version.
+seed: 42
+public_validation_required: true
+sources:
+  - id: taco
+    root: /home/xmv/garbage_yolov8_seg/datasets/taco/yolo_seg
+    enabled: false
+    license_ok: false
+    quota_train: 800
+    other_only_keep_rate: 0.4
+    mapping: {}                 # Already 9-class if class names/order verified
+  - id: can_seg
+    root: /CHANGE/ME/Can_Instance_Segmentation
+    enabled: false
+    license_ok: false
+    quota_train: 700
+    other_only_keep_rate: 1.0
+    mapping: {}
+      # Can: can             # Fill actual source class names after inspecting data.yaml
+  - id: plastic_seg
+    root: /CHANGE/ME/Plastic_SEG
+    enabled: false
+    license_ok: false
+    quota_train: 700
+    other_only_keep_rate: 0.5
+    mapping:
+      Plastic Bottles: bottle
+      Glass Bottles: bottle
+      Plastic Bags: plastic_bag
+      Beverage Cans: can
+      # Do NOT guess mappings of 'Plastic wastes', 'Plastics Container' etc.
+  - id: waste_seg
+    root: /CHANGE/ME/waste-segmentation-v1-yoloseg-9class
+    enabled: false
+    license_ok: false
+    quota_train: 900
+    other_only_keep_rate: 0.2
+    mapping: {}                # Source already mapped to same 9 names: VERIFY
+  - id: cardboard_box
+    root: /CHANGE/ME/Cardboard_Box
+    enabled: false
+    license_ok: false
+    quota_train: 650
+    other_only_keep_rate: 1.0
+    mapping: {}
+      # cardboard box: box
+  - id: cigarette_butts
+    root: /CHANGE/ME/Cigarette_Butts
+    enabled: false
+    license_ok: false
+    quota_train: 250
+    other_only_keep_rate: 1.0
+    mapping: {}
+      # cigarette: cigarette_butt
+
+# SAM 3 assisted, HUMAN reviewed. Do not point at unreviewed SAM 3 candidates.
+indoor:
+  root: /home/xmv/garbage_yolov8_seg/datasets/v3_indoor_sam3_reviewed
+  review_approved: false
+  # Must contain images/{train,val,test}, labels/{train,val,test}, data.yaml.
+  # Split by scene/session BEFORE training; check lookalike/near-duplicate leakage.
