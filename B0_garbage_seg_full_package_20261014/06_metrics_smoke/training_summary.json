@@ -1,0 +1,209 @@
+{
+  "experiment": "B0_TACO_INDOOR_V2_800_2STAGE",
+  "stages": {
+    "PHASE1": {
+      "name": "phase1",
+      "tag": "PHASE1",
+      "start_weights": "/home/xmv/garbage_yolov8_seg/taco_baseline_v2/train/weights/best.pt",
+      "start_weights_sha256": "bfcf3d357346e82e75bb554d16964e7dd786c2886fd8d064d382dd3a4ee703e2",
+      "epochs_requested": 20,
+      "epochs_completed": 20,
+      "best_epoch_by_map50_95_mask": 20,
+      "wall_seconds": 174.2,
+      "wall_minutes": 2.9,
+      "freeze": {
+        "freeze_arg": 10,
+        "freeze_layer_names": [
+          "model.0.",
+          "model.1.",
+          "model.2.",
+          "model.3.",
+          "model.4.",
+          "model.5.",
+          "model.6.",
+          "model.7.",
+          "model.8.",
+          "model.9.",
+          ".dfl"
+        ],
+        "frozen_layer_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "frozen_params": 11855872,
+        "trainable_params": 15388987
+      },
+      "optimizer": {
+        "class": "AdamW",
+        "n_param_groups": 3,
+        "lr_group0": 5.950000000000005e-05,
+        "weight_decay_group_used": 0.0005,
+        "momentum": 0.937,
+        "nbs": 64,
+        "accumulate": 4,
+        "effective_batch": 64
+      },
+      "best_path": "/home/xmv/garbage_yolov8_seg/indoor_ab/B0_taco_indoor_v2_800_2stage/phase1/weights/best.pt",
+      "last_path": "/home/xmv/garbage_yolov8_seg/indoor_ab/B0_taco_indoor_v2_800_2stage/phase1/weights/last.pt",
+      "results_csv": "/home/xmv/garbage_yolov8_seg/indoor_ab/B0_taco_indoor_v2_800_2stage/phase1/results.csv",
+      "args_yaml": "/home/xmv/garbage_yolov8_seg/indoor_ab/B0_taco_indoor_v2_800_2stage/phase1/args.yaml",
+      "sha256:best.pt": "f88f420a54f82023513159ef0402391f5a451c9ec208390efb7489895fde82e1",
+      "sha256:last.pt": "f7c99f3cdde6934311a39f5d4dcad46e1a144403f628232fdcbb5c638779c092",
+      "images_per_sec": 97.0
+    },
+    "PHASE2": {
+      "name": "phase2",
+      "tag": "PHASE2",
+      "start_weights": "/home/xmv/garbage_yolov8_seg/indoor_ab/B0_taco_indoor_v2_800_2stage/phase1/weights/best.pt",
+      "start_weights_sha256": "f88f420a54f82023513159ef0402391f5a451c9ec208390efb7489895fde82e1",
+      "epochs_requested": 180,
+      "epochs_completed": 76,
+      "best_epoch_by_map50_95_mask": 26,
+      "wall_seconds": 726.0,
+      "wall_minutes": 12.1,
+      "freeze": {
+        "freeze_arg": 0,
+        "freeze_layer_names": [
+          ".dfl"
+        ],
+        "frozen_layer_indices": [],
+        "frozen_params": 16,
+        "trainable_params": 27244843
+      },
+      "optimizer": {
+        "class": "AdamW",
+        "n_param_groups": 3,
+        "lr_group0": 0.0003239695232118487,
+        "weight_decay_group_used": 0.0005,
+        "momentum": 0.937,
+        "nbs": 64,
+        "accumulate": 4,
+        "effective_batch": 64
+      },
+      "best_path": "/home/xmv/garbage_yolov8_seg/indoor_ab/B0_taco_indoor_v2_800_2stage/phase2/weights/best.pt",
+      "last_path": "/home/xmv/garbage_yolov8_seg/indoor_ab/B0_taco_indoor_v2_800_2stage/phase2/weights/last.pt",
+      "results_csv": "/home/xmv/garbage_yolov8_seg/indoor_ab/B0_taco_indoor_v2_800_2stage/phase2/results.csv",
+      "args_yaml": "/home/xmv/garbage_yolov8_seg/indoor_ab/B0_taco_indoor_v2_800_2stage/phase2/args.yaml",
+      "sha256:best.pt": "1e102051acdd840983240923e09438068d7ffa2f8e38a706cde1131c6e8e76d6",
+      "sha256:last.pt": "8a01dca60a082eef4806a9e766678c5e71f3a05868afc57cc8056f7e8931ae33",
+      "images_per_sec": 88.5
+    }
+  },
+  "start_weights": "/home/xmv/garbage_yolov8_seg/taco_baseline_v2/train/weights/best.pt",
+  "start_weights_sha256": "bfcf3d357346e82e75bb554d16964e7dd786c2886fd8d064d382dd3a4ee703e2",
+  "ultralytics": "8.4.176",
+  "torch": "2.14.1+cu130",
+  "cuda": "13.0",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "data_yaml": "/home/xmv/garbage_yolov8_seg/datasets/garbage_seg_merged_dedup_v2/data.yaml",
+  "data_version": "garbage_seg_merged_dedup_v2",
+  "data_quality_status": "PROVISIONAL",
+  "common_args": {
+    "imgsz": 800,
+    "batch": 16,
+    "seed": 42,
+    "deterministic": true,
+    "amp": true,
+    "device": 0,
+    "workers": 8,
+    "data": "/home/xmv/garbage_yolov8_seg/datasets/garbage_seg_merged_dedup_v2/data.yaml",
+    "project": "/home/xmv/garbage_yolov8_seg/indoor_ab/B0_taco_indoor_v2_800_2stage",
+    "val": true,
+    "plots": true,
+    "save": true,
+    "save_period": -1,
+    "cache": false,
+    "split": "val",
+    "task": "segment",
+    "verbose": true,
+    "pretrained": true,
+    "optimizer": "AdamW",
+    "weight_decay": 0.0005,
+    "exist_ok": false,
+    "single_cls": false,
+    "rect": false,
+    "hsv_h": 0.015,
+    "hsv_s": 0.35,
+    "hsv_v": 0.3,
+    "degrees": 8.0,
+    "translate": 0.1,
+    "scale": 0.25,
+    "fliplr": 0.5,
+    "flipud": 0.0,
+    "perspective": 0.0,
+    "mosaic": 0.3,
+    "mixup": 0.0,
+    "copy_paste": 0.1,
+    "multi_scale": 0.1,
+    "mask_ratio": 2,
+    "overlap_mask": true,
+    "auto_augment": null,
+    "erasing": 0.0,
+    "shear": 0.0,
+    "cutmix": 0.0,
+    "bgr": 0.0
+  },
+  "augmentation": {
+    "hsv_h": 0.015,
+    "hsv_s": 0.35,
+    "hsv_v": 0.3,
+    "degrees": 8.0,
+    "translate": 0.1,
+    "scale": 0.25,
+    "fliplr": 0.5,
+    "flipud": 0.0,
+    "perspective": 0.0,
+    "mosaic": 0.3,
+    "mixup": 0.0,
+    "copy_paste": 0.1,
+    "multi_scale": 0.1,
+    "mask_ratio": 2,
+    "overlap_mask": true,
+    "auto_augment": null,
+    "erasing": 0.0,
+    "shear": 0.0,
+    "cutmix": 0.0,
+    "bgr": 0.0
+  },
+  "label_manifest_sha256": "e89fa7f35bae893876e454cde5ed738dea2117cc58147ae3845d93ca5e0cb8a2",
+  "n_label_files": 1135,
+  "split_counts": {
+    "train": {
+      "images": 845,
+      "labels": 845
+    },
+    "val": {
+      "images": 145,
+      "labels": 145
+    },
+    "test": {
+      "images": 145,
+      "labels": 145
+    }
+  },
+  "protected_dir_hashes_before": {
+    "A_coco_direct_800_2stage": "c6c27e68b57e5dafc272bf92d2640ae6f92a12ed8e4f36060bd42f7d3019f8e6",
+    "taco_baseline_v2": "c2df9fa217072358c032300b40cd27970e22a73068ce1e3962b16aa125d77c32"
+  },
+  "resource": {
+    "peak_gpu_alloc_MiB": 16014.7,
+    "peak_gpu_reserved_MiB": 19370.0,
+    "peak_nvidia_smi_used_MiB": 29825,
+    "total_wall_seconds": 900.2,
+    "total_wall_minutes": 15.0,
+    "total_epochs_completed": 96
+  },
+  "protected_dir_hashes_after": {
+    "A_coco_direct_800_2stage": "c6c27e68b57e5dafc272bf92d2640ae6f92a12ed8e4f36060bd42f7d3019f8e6",
+    "taco_baseline_v2": "c2df9fa217072358c032300b40cd27970e22a73068ce1e3962b16aa125d77c32"
+  },
+  "protected_dirs_unchanged": true
+}

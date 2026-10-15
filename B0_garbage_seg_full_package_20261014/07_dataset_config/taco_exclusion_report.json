@@ -1,0 +1,143 @@
+{
+ "policy": {
+  "D6_unlabeled_litter": "whole image exclusion",
+  "D7_multipart": "policy=exclude (v1 default = whole image exclusion)",
+  "deferred_semantics": "PROVISIONAL tier left unmapped -> image excluded, never implicit background",
+  "unresolved_category": "Six pack rings -> image excluded"
+ },
+ "n_images": 1500,
+ "n_annotations": 4784,
+ "kept_images": 1145,
+ "excluded_images": 355,
+ "exclusion_reason_image_counts_overlapping": {
+  "deferred_semantics": 43,
+  "multipart_polygon": 81,
+  "unlabeled_litter": 269,
+  "unresolved_category": 4
+ },
+ "exclusion_reason_instance_counts_overlapping": {
+  "deferred_semantics": 49,
+  "multipart_polygon": 114,
+  "unlabeled_litter": 517,
+  "unresolved_category": 5
+ },
+ "exclusion_reason_detail_by_category": {
+  "deferred_semantics": {
+   "Aerosol": 10,
+   "Paper bag": 27,
+   "Wrapping paper": 12
+  },
+  "multipart_polygon": {
+   "Plastic film": 24,
+   "Clear plastic bottle": 5,
+   "Cigarette": 2,
+   "Rope & strings": 1,
+   "Glass bottle": 3,
+   "Styrofoam piece": 3,
+   "Unlabeled litter": 15,
+   "Meal carton": 2,
+   "Other plastic": 8,
+   "Plastic straw": 11,
+   "Paper bag": 1,
+   "Plastic bottle cap": 1,
+   "Paper cup": 1,
+   "Single-use carrier bag": 2,
+   "Other plastic wrapper": 16,
+   "Disposable plastic cup": 1,
+   "Drink can": 2,
+   "Plastic lid": 2,
+   "Drink carton": 1,
+   "Plastic utensils": 6,
+   "Broken glass": 2,
+   "Wrapping paper": 1,
+   "Garbage bag": 2,
+   "Normal paper": 2
+  },
+  "unlabeled_litter": {
+   "Unlabeled litter": 517
+  },
+  "unresolved_category": {
+   "Six pack rings": 5
+  }
+ },
+ "union_excluded": 355,
+ "naive_sum_D6_plus_D7": 350,
+ "actual_union_of_D6_and_D7": 321,
+ "D6_D7_overlap": 29,
+ "multipart_annotations": 114,
+ "out_of_bounds_annotations": 6,
+ "out_of_bounds_annotation_ids": [
+  371,
+  387,
+  707,
+  859,
+  1621,
+  1777
+ ],
+ "duplicate_annotation_ids": [
+  309,
+  4040
+ ],
+ "mapped_categories": 54,
+ "mapped_instances": 4213,
+ "multipart_policy": "exclude",
+ "union_excluded_detail": {
+  "unlabeled_litter_images": 269,
+  "multipart_images": 81,
+  "naive_sum_D6_plus_D7": 350,
+  "actual_union_of_D6_and_D7": 321,
+  "overlap_D6_and_D7": 29,
+  "total_excluded_union": 355,
+  "kept_images": 1145
+ },
+ "deferred_categories": [
+  11,
+  32,
+  34
+ ],
+ "excluded_categories": [
+  58
+ ],
+ "unresolved_categories": [
+  37
+ ],
+ "pending_human_adjudication": [
+  {
+   "taco_id": 34,
+   "name": "Paper bag",
+   "instances": 27,
+   "images": 23,
+   "decision": "D5",
+   "options": [
+    "paper",
+    "plastic_bag",
+    "other"
+   ],
+   "impact": "paper/plastic_bag 边界"
+  },
+  {
+   "taco_id": 32,
+   "name": "Wrapping paper",
+   "instances": 12,
+   "images": 11,
+   "decision": "D5",
+   "options": [
+    "paper",
+    "wrapper"
+   ],
+   "impact": "paper/wrapper 命名冲突"
+  },
+  {
+   "taco_id": 11,
+   "name": "Aerosol",
+   "instances": 10,
+   "images": 10,
+   "decision": "D3-rel",
+   "options": [
+    "can",
+    "other"
+   ],
+   "impact": "can 类是否含喷雾罐"
+  }
+ ]
+}

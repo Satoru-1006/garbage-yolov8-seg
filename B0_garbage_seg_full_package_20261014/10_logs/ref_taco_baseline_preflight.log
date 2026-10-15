@@ -1,0 +1,80 @@
+训练参数: {'task': 'segment', 'data': '/home/xmv/garbage_yolov8_seg/datasets/taco/yolo_seg/data.yaml', 'epochs': 100, 'imgsz': 640, 'batch': 16, 'device': 0, 'workers': 8, 'patience': 15, 'optimizer': 'auto', 'amp': True, 'seed': 42, 'plots': True, 'save': True, 'cls_pw': 0.0, 'project': '/home/xmv/garbage_yolov8_seg/taco_baseline_v2', 'name': 'train', 'pretrained': True, 'val': True, 'exist_ok': False}
+模型权重: /home/xmv/garbage_yolov8_seg/yolov8m-seg.pt
+[preflight] data.yaml = /home/xmv/garbage_yolov8_seg/datasets/taco/yolo_seg/data.yaml
+[preflight] 类别 = {0: 'bottle', 1: 'box', 2: 'can', 3: 'cigarette_butt', 4: 'food_waste', 5: 'other', 6: 'paper', 7: 'plastic_bag', 8: 'wrapper'}
+[preflight] other 真实类别 ID = 5
+[preflight] 期望权重向量 = [          1           1           1           1           1         0.7           1           1           1]
+Ultralytics 8.4.176 🚀 Python-3.12.15 torch-2.14.1+cu130 CUDA:0 (NVIDIA GeForce RTX 5090, 32088MiB)
+[34m[1mengine/trainer: [0magnostic_nms=False, amp=True, angle=1.0, augment=False, auto_augment=randaugment, batch=16, bgr=0.0, box=7.5, cache=False, cfg=None, channels_last=None, classes=None, close_mosaic=10, cls=0.5, cls_pw=0.0, cls_remap=True, compile=False, conf=None, copy_paste=0.0, copy_paste_mode=flip, cos_lr=False, cutmix=0.0, data=/home/xmv/garbage_yolov8_seg/datasets/taco/yolo_seg/data.yaml, degrees=0.0, deterministic=True, device=0, dfl=1.5, dgrad=0.5, dis=6.0, distill_model=None, dlam=1.0, dlog=1.0, dnn=False, dropout=0.0, dynamic=False, embed=None, epochs=100, erasing=0.4, exist_ok=False, fliplr=0.5, flipud=0.0, format=torchscript, fraction=1.0, freeze=None, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, imgsz=640, iou=0.7, kobj=1.0, line_width=None, lr0=0.01, lrf=0.01, mask_ratio=4, max_det=300, mixup=0.0, mode=train, model=/home/xmv/garbage_yolov8_seg/yolov8m-seg.pt, momentum=0.937, mosaic=1.0, multi_scale=0.0, name=train, nbs=64, nms=None, opset=None, optimize=False, optimizer=auto, overlap_mask=True, patience=15, perspective=0.0, plots=True, pose=12.0, pretrained=True, profile=False, project=/tmp/stage1_preflight_7d_hm388, quantize=None, rect=False, resume=False, retina_masks=False, rle=1.0, save=True, save_conf=False, save_crop=False, save_dir=/tmp/stage1_preflight_7d_hm388/train, save_frames=False, save_json=False, save_period=-1, save_txt=False, scale=0.5, seed=42, shear=0.0, show=False, show_boxes=True, show_conf=True, show_labels=True, simplify=True, single_cls=False, source=None, split=val, stream_buffer=False, task=segment, time=None, tracker=tracktrack.yaml, translate=0.1, val=True, verbose=True, vid_stride=1, visualize=False, warmup_bias_lr=0.1, warmup_epochs=3.0, warmup_momentum=0.8, weight_decay=0.0005, workers=8, workspace=None
+Overriding model.yaml nc=80 with nc=9
+
+                   from  n    params  module                                       arguments                     
+  0                  -1  1      1392  ultralytics.nn.modules.conv.Conv             [3, 48, 3, 2]                 
+  1                  -1  1     41664  ultralytics.nn.modules.conv.Conv             [48, 96, 3, 2]                
+  2                  -1  2    111360  ultralytics.nn.modules.block.C2f             [96, 96, 2, True]             
+  3                  -1  1    166272  ultralytics.nn.modules.conv.Conv             [96, 192, 3, 2]               
+  4                  -1  4    813312  ultralytics.nn.modules.block.C2f             [192, 192, 4, True]           
+  5                  -1  1    664320  ultralytics.nn.modules.conv.Conv             [192, 384, 3, 2]              
+  6                  -1  4   3248640  ultralytics.nn.modules.block.C2f             [384, 384, 4, True]           
+  7                  -1  1   1991808  ultralytics.nn.modules.conv.Conv             [384, 576, 3, 2]              
+  8                  -1  2   3985920  ultralytics.nn.modules.block.C2f             [576, 576, 2, True]           
+  9                  -1  1    831168  ultralytics.nn.modules.block.SPPF            [576, 576, 5]                 
+ 10                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 11             [-1, 6]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 12                  -1  2   1993728  ultralytics.nn.modules.block.C2f             [960, 384, 2]                 
+ 13                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 14             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 15                  -1  2    517632  ultralytics.nn.modules.block.C2f             [576, 192, 2]                 
+ 16                  -1  1    332160  ultralytics.nn.modules.conv.Conv             [192, 192, 3, 2]              
+ 17            [-1, 12]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 18                  -1  2   1846272  ultralytics.nn.modules.block.C2f             [576, 384, 2]                 
+ 19                  -1  1   1327872  ultralytics.nn.modules.conv.Conv             [384, 384, 3, 2]              
+ 20             [-1, 9]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 21                  -1  2   4207104  ultralytics.nn.modules.block.C2f             [960, 576, 2]                 
+ 22        [15, 18, 21]  1   5164235  ultralytics.nn.modules.head.Segment          [9, 32, 192, 16, None, [192, 384, 576]]
+YOLOv8m-seg summary: 191 layers, 27,244,859 parameters, 27,244,843 gradients, 104.7 GFLOPs
+
+Remapped 1/9 cls head rows from pretrained weights by class name
+Transferred 537/537 items from pretrained weights
+Freezing layer 'model.22.dfl.conv.weight'
+[34m[1mAMP: [0mrunning Automatic Mixed Precision (AMP) checks...
+[34m[1mAMP: [0mchecks passed ✅
+[34m[1mtrain: [0mFast image access ✅ (ping: 0.0±0.0 ms, read: 7266.4±3740.0 MB/s, size: 2409.7 KB)
+[K[34m[1mtrain: [0mScanning /home/xmv/garbage_yolov8_seg/datasets/taco/yolo_seg/labels/train.cache... 917 images, 0 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 917/917 384.6Mit/s 0.0s
+[34m[1mval: [0mFast image access ✅ (ping: 0.0±0.0 ms, read: 10162.1±1170.1 MB/s, size: 1973.3 KB)
+[K[34m[1mval: [0mScanning /home/xmv/garbage_yolov8_seg/datasets/taco/yolo_seg/labels/val.cache... 114 images, 0 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 114/114 59.8Mit/s 0.0s
+[34m[1moptimizer:[0m 'optimizer=auto' found, ignoring 'lr0=0.01' and determining best 'optimizer' and 'lr0' automatically... 
+[34m[1moptimizer:[0m AdamW(lr=0.000769, momentum=0.9) with parameter groups 86 weight(decay=0.0), 97 weight(decay=0.0005), 96 bias(decay=0.0)
+[class-weights] other(id=5)=0.700, 其余 8 类=1.000, 向量=[          1           1           1           1           1         0.7           1           1           1], criterion 当时已同步=False（False 表示 criterion 由首次前向惰性构建，将直接读取 model.class_weights）
+Plotting labels to /tmp/stage1_preflight_7d_hm388/train/labels.jpg... 
+
+================ PREFLIGHT RESULT ================
+其它类别权重 (nc=9): [1.0, 1.0, 1.0, 1.0, 1.0, 0.699999988079071, 1.0, 1.0, 1.0]
+权重张量长度 == 类别总数      : True
+other(5) == 0.7        : True
+其余类别均 == 1.0             : True
+损失类                        : v8SegmentationLoss
+v8SegmentationLoss 读取权重   : True
+criterion.class_weights       : [1.0, 1.0, 1.0, 1.0, 1.0, 0.699999988079071, 1.0, 1.0, 1.0]
+BCE 逐通道加权比例            : [1.0, 1.0, 1.0, 1.0, 1.0, 0.699999988079071, 1.0, 1.0, 1.0]
+---- 真实数据闭式检查（同一 batch，仅切换 other 通道权重）----
+  cls_loss  when other=1.0    : 4.115085
+  cls_loss  when other=0.7    : 3.856063
+  cls_loss  when other=0.0    : 3.251678
+  比值 0.7/1.0                : 0.937056
+  仿射式 0.7*L(1)+0.3*L(0)    : 3.856063  (绝对偏差 3.815e-07)
+  other 在 BCE 中的质量占比 s  : 0.209815
+  1 - 0.3*s 预测比值           : 0.937055
+  box/seg/dfl 绝对变化         : {'box_loss': 0.0, 'seg_loss': 0.0, 'dfl_loss': 0.0}  (必须全为 0.0)
+  非 cls 损失完全不受影响      : True
+  仿射关系成立                : True
+---- 真实梯度检查（cls 分支 cv3）----
+  cls_loss 加权后 other=0.7   : 3.856063
+  cls_loss 未加权             : 4.115085
+  比值 加权后/未加权           : 0.937056
+  cls 梯度相对差              : 0.120159
+  同一 batch 同一条件          : True
+  交叉自洽（None==全1 / 比值一致）: {'class_weights_None_equals_ones': True, 'ratios_agree': True}
+首个 batch loss               : {'box_loss': 1.2777841091156006, 'seg_loss': 3.0645337104797363, 'cls_loss': 3.8560633659362793, 'dfl_loss': 1.2910577058792114, 'sem_loss': 0.0}
+=================================================
+PREFLIGHT: PASS —— other=0.7 / 其余=1.0 自定义分类损失权重确认生效

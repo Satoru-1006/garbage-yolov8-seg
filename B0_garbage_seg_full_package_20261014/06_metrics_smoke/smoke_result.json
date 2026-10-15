@@ -1,0 +1,549 @@
+{
+  "orig_nc": 9,
+  "taco_params": 27244859,
+  "dataset_nc": 9,
+  "class_names": [
+    "bottle",
+    "box",
+    "can",
+    "cigarette_butt",
+    "food_waste",
+    "other",
+    "paper",
+    "plastic_bag",
+    "wrapper"
+  ],
+  "head_replaced": false,
+  "split_counts": {
+    "train": {
+      "images": 845,
+      "labels": 845
+    },
+    "val": {
+      "images": 145,
+      "labels": 145
+    },
+    "test": {
+      "images": 145,
+      "labels": 145
+    }
+  },
+  "actual_args": {
+    "imgsz": 800,
+    "batch": 16,
+    "freeze": 10,
+    "mask_ratio": 2,
+    "copy_paste": 0.1,
+    "multi_scale": 0.1,
+    "overlap_mask": true,
+    "mosaic": 0.3,
+    "mixup": 0.0,
+    "degrees": 8.0,
+    "translate": 0.1,
+    "scale": 0.25,
+    "fliplr": 0.5,
+    "flipud": 0.0,
+    "hsv_h": 0.015,
+    "hsv_s": 0.35,
+    "hsv_v": 0.3,
+    "optimizer": "AdamW",
+    "lr0": 0.001,
+    "weight_decay": 0.0005,
+    "close_mosaic": 0,
+    "deterministic": true,
+    "amp": true,
+    "seed": 42,
+    "workers": 2
+  },
+  "optimizer_actual": {
+    "class": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.0005,
+    "n_param_groups": 3
+  },
+  "amp_check": true,
+  "n_train": 845,
+  "n_val": 145,
+  "freeze_layer_names": [
+    "model.0.",
+    "model.1.",
+    "model.2.",
+    "model.3.",
+    "model.4.",
+    "model.5.",
+    "model.6.",
+    "model.7.",
+    "model.8.",
+    "model.9.",
+    ".dfl"
+  ],
+  "n_frozen_tensors": 118,
+  "frozen_layer_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "frozen_layer_types": {
+    "0": "Conv",
+    "1": "Conv",
+    "2": "C2f",
+    "3": "Conv",
+    "4": "C2f",
+    "5": "Conv",
+    "6": "C2f",
+    "7": "Conv",
+    "8": "C2f",
+    "9": "SPPF"
+  },
+  "frozen_params": 11855872,
+  "trainable_params": 15388987,
+  "trainable_ratio": 0.5648,
+  "transform_chain": [
+    "Compose",
+    "Mosaic",
+    "CopyPaste",
+    "RandomPerspective",
+    "MixUp",
+    "Compose",
+    "Mosaic",
+    "CopyPaste",
+    "RandomPerspective",
+    "CutMix",
+    "Compose",
+    "Mosaic",
+    "CopyPaste",
+    "RandomPerspective",
+    "Albumentations",
+    "RandomHSV",
+    "RandomFlip",
+    "RandomFlip",
+    "Format"
+  ],
+  "copy_paste_assembled": true,
+  "mosaic_assembled": true,
+  "aug_align": [
+    {
+      "index": 365,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 5,
+      "mask_unique_nonzero": 5,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        5
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 74,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 2,
+      "mask_unique_nonzero": 2,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        1,
+        6
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 79,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 1,
+      "mask_unique_nonzero": 1,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        6
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 619,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 7,
+      "mask_unique_nonzero": 7,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        5,
+        6
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 583,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 7,
+      "mask_unique_nonzero": 7,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        5,
+        6
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 544,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 19,
+      "mask_unique_nonzero": 19,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        1,
+        7,
+        8
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 442,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 4,
+      "mask_unique_nonzero": 4,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        5,
+        6
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 641,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 2,
+      "mask_unique_nonzero": 2,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        5,
+        6
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 664,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 17,
+      "mask_unique_nonzero": 17,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        1,
+        5,
+        7,
+        8
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 605,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 25,
+      "mask_unique_nonzero": 25,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        1
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 361,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 25,
+      "mask_unique_nonzero": 25,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        1,
+        5,
+        6,
+        7
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 71,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 1,
+      "mask_unique_nonzero": 1,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        1
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 716,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 2,
+      "mask_unique_nonzero": 2,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        5,
+        6
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 820,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 2,
+      "mask_unique_nonzero": 2,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        6
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 643,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 1,
+      "mask_unique_nonzero": 1,
+      "match": true,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        8
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    },
+    {
+      "index": 168,
+      "img_shape": [
+        800,
+        800
+      ],
+      "mask_shape": [
+        1,
+        400,
+        400
+      ],
+      "n_instances": 22,
+      "mask_unique_nonzero": 21,
+      "match": false,
+      "img_dtype": "torch.uint8",
+      "img_finite": true,
+      "cls_ids": [
+        1,
+        5,
+        7,
+        8
+      ],
+      "bboxes_in_range": true,
+      "mask_ratio_effective": 2.0
+    }
+  ],
+  "aug_all_match": false,
+  "aug_max_class_id": 8,
+  "mask_bbox_iou_mean": 0.8325,
+  "mask_bbox_iou_min": 0.0,
+  "mask_ratio_effective": 2.0,
+  "aug_mismatch_samples": 1,
+  "aug_viz": "/home/xmv/garbage_yolov8_seg/indoor_ab/B0_taco_indoor_v2_800_2stage/smoke/augmented_samples.jpg",
+  "batch_probes": [
+    {
+      "batch": 16,
+      "status": "OK",
+      "loss_total": 201.432373046875,
+      "loss_items": {
+        "box_loss": 1.5303311347961426,
+        "seg_loss": 4.124980926513672,
+        "cls_loss": 5.45113468170166,
+        "dfl_loss": 1.4830758571624756,
+        "sem_loss": 0.0
+      },
+      "peak_mem_MiB": 9757.3,
+      "n_trainable_actual": 15388987,
+      "n_instances_in_batch": 60,
+      "seconds": 1.1
+    }
+  ],
+  "selected_batch": 16,
+  "peak_mem_MiB": 9757.3,
+  "loss_finite": true,
+  "env": {
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "gpu_mem_GiB": 31.34,
+    "cc": "12.0",
+    "torch": "2.14.1+cu130",
+    "cuda": "13.0",
+    "ultralytics": "8.4.176",
+    "python": "3.12.15"
+  },
+  "label_smoothing_supported": false,
+  "smoke_overall": {
+    "weights": "/home/xmv/garbage_yolov8_seg/taco_baseline_v2/train/weights/best.pt",
+    "data": "/home/xmv/garbage_yolov8_seg/datasets/garbage_seg_merged_dedup_v2/data.yaml",
+    "batch_selected": 16,
+    "peak_mem_MiB": 9757.3,
+    "loss_finite": true,
+    "aug_all_match": false,
+    "max_class_id": 8
+  }
+}

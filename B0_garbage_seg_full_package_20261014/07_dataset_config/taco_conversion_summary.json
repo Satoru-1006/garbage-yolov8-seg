@@ -1,0 +1,173 @@
+{
+ "generated_at": "2026-10-13T14:55:39",
+ "annotations_file": "/home/xmv/garbage_yolov8_seg/datasets/taco/raw/taco_official_repo/data/annotations.json",
+ "annotations_sha256": "ac1ec605c9e1fcda767970de3457c69b4a43b62c02aca8c4c80f51d1b5ae8449",
+ "mapping_file": "tools/taco/taco_class_mapping_v2.json",
+ "status": "CANDIDATE_V1_SAFE_SUBSET",
+ "target_classes": {
+  "0": "bottle",
+  "1": "box",
+  "2": "can",
+  "3": "cigarette_butt",
+  "4": "food_waste",
+  "5": "other",
+  "6": "paper",
+  "7": "plastic_bag",
+  "8": "wrapper"
+ },
+ "split_ratios": [
+  0.8,
+  0.1,
+  0.1
+ ],
+ "seed": 0,
+ "multipart_policy": "exclude",
+ "images": {
+  "input": 1500,
+  "kept": 1145,
+  "excluded": 355,
+  "train": 917,
+  "val": 114,
+  "test": 114,
+  "units": 1140,
+  "reencoded": 460,
+  "byte_copied": 685,
+  "annotations_clipped": 25,
+  "annotations_degenerate_dropped": 0
+ },
+ "instances_per_class_per_split": {
+  "train": {
+   "bottle": 210,
+   "box": 120,
+   "can": 130,
+   "cigarette_butt": 283,
+   "food_waste": 2,
+   "other": 753,
+   "paper": 97,
+   "plastic_bag": 44,
+   "wrapper": 375
+  },
+  "val": {
+   "bottle": 59,
+   "box": 25,
+   "can": 68,
+   "cigarette_butt": 58,
+   "food_waste": 3,
+   "other": 102,
+   "paper": 17,
+   "plastic_bag": 7,
+   "wrapper": 40
+  },
+  "test": {
+   "bottle": 9,
+   "box": 45,
+   "can": 3,
+   "cigarette_butt": 27,
+   "food_waste": 0,
+   "other": 72,
+   "paper": 7,
+   "plastic_bag": 12,
+   "wrapper": 57
+  }
+ },
+ "instances_per_class_total": {
+  "bottle": 278,
+  "box": 190,
+  "can": 201,
+  "cigarette_butt": 368,
+  "food_waste": 5,
+  "other": 927,
+  "paper": 121,
+  "plastic_bag": 63,
+  "wrapper": 472
+ },
+ "images_per_class_per_split": {
+  "train": {
+   "bottle": 172,
+   "box": 100,
+   "can": 86,
+   "cigarette_butt": 114,
+   "food_waste": 2,
+   "other": 492,
+   "paper": 81,
+   "plastic_bag": 32,
+   "wrapper": 305
+  },
+  "val": {
+   "bottle": 45,
+   "box": 13,
+   "can": 42,
+   "cigarette_butt": 24,
+   "food_waste": 3,
+   "other": 58,
+   "paper": 12,
+   "plastic_bag": 5,
+   "wrapper": 25
+  },
+  "test": {
+   "bottle": 9,
+   "box": 27,
+   "can": 3,
+   "cigarette_butt": 10,
+   "food_waste": 0,
+   "other": 55,
+   "paper": 7,
+   "plastic_bag": 6,
+   "wrapper": 40
+  }
+ },
+ "reconciliation": {
+  "input_annotations": 4784,
+  "written": 2625,
+  "dropped_image_excluded": 2159,
+  "dropped_degenerate_or_clipped_away": 0,
+  "sum_equals_input": true
+ },
+ "duplicate_annotation_id_audit": [
+  {
+   "annotation_id": 309,
+   "annotation_index": 308,
+   "image_id": 93,
+   "file_name": "batch_1/000120.JPG",
+   "category_id": 59,
+   "category_name": "Cigarette",
+   "image_kept": true
+  },
+  {
+   "annotation_id": 309,
+   "annotation_index": 309,
+   "image_id": 101,
+   "file_name": "batch_10/000000.jpg",
+   "category_id": 5,
+   "category_name": "Clear plastic bottle",
+   "image_kept": true
+  },
+  {
+   "annotation_id": 4040,
+   "annotation_index": 4039,
+   "image_id": 1281,
+   "file_name": "batch_7/000123.JPG",
+   "category_id": 59,
+   "category_name": "Cigarette",
+   "image_kept": true
+  },
+  {
+   "annotation_id": 4040,
+   "annotation_index": 4040,
+   "image_id": 1300,
+   "file_name": "batch_8/000000.jpg",
+   "category_id": 58,
+   "category_name": "Unlabeled litter",
+   "image_kept": false
+  }
+ ],
+ "exclusion": {
+  "unlabeled_litter_images": 269,
+  "multipart_images": 81,
+  "naive_sum_D6_plus_D7": 350,
+  "actual_union_of_D6_and_D7": 321,
+  "overlap_D6_and_D7": 29,
+  "total_excluded_union": 355,
+  "kept_images": 1145
+ }
+}

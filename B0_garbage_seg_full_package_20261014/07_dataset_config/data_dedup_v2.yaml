@@ -1,0 +1,16 @@
+path: /home/xmv/garbage_yolov8_seg/datasets/garbage_seg_merged_dedup_v2
+
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: bottle
+  1: box
+  2: can
+  3: cigarette_butt
+  4: food_waste
+  5: other
+  6: paper
+  7: plastic_bag
+  8: wrapper

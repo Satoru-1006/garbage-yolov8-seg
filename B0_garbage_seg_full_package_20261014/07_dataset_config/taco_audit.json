@@ -1,0 +1,1044 @@
+{
+ "annotations_file": "/home/xmv/garbage_yolov8_seg/datasets/taco/raw/taco_official_repo/data/annotations.json",
+ "annotations_sha256": "ac1ec605c9e1fcda767970de3457c69b4a43b62c02aca8c4c80f51d1b5ae8449",
+ "n_images": 1500,
+ "n_annotations": 4784,
+ "n_categories": 60,
+ "scene_annotations_present": true,
+ "n_scene_annotations": 4296,
+ "n_scene_categories": 7,
+ "licenses": [],
+ "info": {
+  "year": 2019,
+  "version": null,
+  "description": "TACO",
+  "contributor": null,
+  "url": null,
+  "date_created": "2019-12-19T16:11:15.258399+00:00"
+ },
+ "duplicate_image_ids": [],
+ "duplicate_file_names": [],
+ "duplicate_flickr_urls": [],
+ "duplicate_flickr_photo_ids": {},
+ "n_images_sharing_flickr_photo_id": 0,
+ "annotations_with_missing_image": 0,
+ "images_without_annotations": 0,
+ "images_without_annotations_ids": [],
+ "annotations_with_unknown_category": 0,
+ "duplicate_annotation_ids": [
+  309,
+  4040
+ ],
+ "segmentation_types": {
+  "polygon": 4784
+ },
+ "rle_structural": {},
+ "empty_segmentations": 0,
+ "polygons_with_lt3_points": 0,
+ "degenerate_polygons": 0,
+ "non_polygon_non_rle_segmentations": 0,
+ "annotations_with_multiple_polygons": 114,
+ "polygon_point_count_min": 3,
+ "polygon_point_count_max": 543,
+ "polygon_point_count_mean": 23.54,
+ "annotations_with_out_of_bounds_coords": 6,
+ "out_of_bounds_annotation_ids_sample": [
+  371,
+  387,
+  707,
+  859,
+  1621,
+  1777
+ ],
+ "annotations_zero_area": 0,
+ "annotations_negative_area": 0,
+ "annotations_polygon_vs_area_mismatch_gt5pct": 1,
+ "annotations_invalid_bbox": 0,
+ "iscrowd_distribution": {
+  "0": 4784
+ },
+ "iscrowd_annotation_ids": [],
+ "category_instance_counts": {
+  "Aluminium foil": {
+   "category_id": 0,
+   "supercategory": "Aluminium foil",
+   "instances": 62,
+   "images": 43
+  },
+  "Battery": {
+   "category_id": 1,
+   "supercategory": "Battery",
+   "instances": 2,
+   "images": 2
+  },
+  "Aluminium blister pack": {
+   "category_id": 2,
+   "supercategory": "Blister pack",
+   "instances": 6,
+   "images": 6
+  },
+  "Carded blister pack": {
+   "category_id": 3,
+   "supercategory": "Blister pack",
+   "instances": 1,
+   "images": 1
+  },
+  "Other plastic bottle": {
+   "category_id": 4,
+   "supercategory": "Bottle",
+   "instances": 50,
+   "images": 45
+  },
+  "Clear plastic bottle": {
+   "category_id": 5,
+   "supercategory": "Bottle",
+   "instances": 285,
+   "images": 225
+  },
+  "Glass bottle": {
+   "category_id": 6,
+   "supercategory": "Bottle",
+   "instances": 104,
+   "images": 74
+  },
+  "Plastic bottle cap": {
+   "category_id": 7,
+   "supercategory": "Bottle cap",
+   "instances": 209,
+   "images": 185
+  },
+  "Metal bottle cap": {
+   "category_id": 8,
+   "supercategory": "Bottle cap",
+   "instances": 80,
+   "images": 55
+  },
+  "Broken glass": {
+   "category_id": 9,
+   "supercategory": "Broken glass",
+   "instances": 138,
+   "images": 15
+  },
+  "Food Can": {
+   "category_id": 10,
+   "supercategory": "Can",
+   "instances": 34,
+   "images": 20
+  },
+  "Aerosol": {
+   "category_id": 11,
+   "supercategory": "Can",
+   "instances": 10,
+   "images": 10
+  },
+  "Drink can": {
+   "category_id": 12,
+   "supercategory": "Can",
+   "instances": 229,
+   "images": 151
+  },
+  "Toilet tube": {
+   "category_id": 13,
+   "supercategory": "Carton",
+   "instances": 5,
+   "images": 3
+  },
+  "Other carton": {
+   "category_id": 14,
+   "supercategory": "Carton",
+   "instances": 93,
+   "images": 79
+  },
+  "Egg carton": {
+   "category_id": 15,
+   "supercategory": "Carton",
+   "instances": 11,
+   "images": 9
+  },
+  "Drink carton": {
+   "category_id": 16,
+   "supercategory": "Carton",
+   "instances": 45,
+   "images": 41
+  },
+  "Corrugated carton": {
+   "category_id": 17,
+   "supercategory": "Carton",
+   "instances": 64,
+   "images": 41
+  },
+  "Meal carton": {
+   "category_id": 18,
+   "supercategory": "Carton",
+   "instances": 30,
+   "images": 27
+  },
+  "Pizza box": {
+   "category_id": 19,
+   "supercategory": "Carton",
+   "instances": 3,
+   "images": 3
+  },
+  "Paper cup": {
+   "category_id": 20,
+   "supercategory": "Cup",
+   "instances": 67,
+   "images": 62
+  },
+  "Disposable plastic cup": {
+   "category_id": 21,
+   "supercategory": "Cup",
+   "instances": 104,
+   "images": 91
+  },
+  "Foam cup": {
+   "category_id": 22,
+   "supercategory": "Cup",
+   "instances": 13,
+   "images": 11
+  },
+  "Glass cup": {
+   "category_id": 23,
+   "supercategory": "Cup",
+   "instances": 6,
+   "images": 4
+  },
+  "Other plastic cup": {
+   "category_id": 24,
+   "supercategory": "Cup",
+   "instances": 2,
+   "images": 2
+  },
+  "Food waste": {
+   "category_id": 25,
+   "supercategory": "Food waste",
+   "instances": 8,
+   "images": 7
+  },
+  "Glass jar": {
+   "category_id": 26,
+   "supercategory": "Glass jar",
+   "instances": 6,
+   "images": 4
+  },
+  "Plastic lid": {
+   "category_id": 27,
+   "supercategory": "Lid",
+   "instances": 77,
+   "images": 69
+  },
+  "Metal lid": {
+   "category_id": 28,
+   "supercategory": "Lid",
+   "instances": 10,
+   "images": 6
+  },
+  "Other plastic": {
+   "category_id": 29,
+   "supercategory": "Other plastic",
+   "instances": 273,
+   "images": 171
+  },
+  "Magazine paper": {
+   "category_id": 30,
+   "supercategory": "Paper",
+   "instances": 12,
+   "images": 5
+  },
+  "Tissues": {
+   "category_id": 31,
+   "supercategory": "Paper",
+   "instances": 42,
+   "images": 36
+  },
+  "Wrapping paper": {
+   "category_id": 32,
+   "supercategory": "Paper",
+   "instances": 12,
+   "images": 11
+  },
+  "Normal paper": {
+   "category_id": 33,
+   "supercategory": "Paper",
+   "instances": 82,
+   "images": 68
+  },
+  "Paper bag": {
+   "category_id": 34,
+   "supercategory": "Paper bag",
+   "instances": 27,
+   "images": 23
+  },
+  "Plastified paper bag": {
+   "category_id": 35,
+   "supercategory": "Paper bag",
+   "instances": 0,
+   "images": 0
+  },
+  "Plastic film": {
+   "category_id": 36,
+   "supercategory": "Plastic bag & wrapper",
+   "instances": 451,
+   "images": 310
+  },
+  "Six pack rings": {
+   "category_id": 37,
+   "supercategory": "Plastic bag & wrapper",
+   "instances": 5,
+   "images": 4
+  },
+  "Garbage bag": {
+   "category_id": 38,
+   "supercategory": "Plastic bag & wrapper",
+   "instances": 31,
+   "images": 20
+  },
+  "Other plastic wrapper": {
+   "category_id": 39,
+   "supercategory": "Plastic bag & wrapper",
+   "instances": 260,
+   "images": 184
+  },
+  "Single-use carrier bag": {
+   "category_id": 40,
+   "supercategory": "Plastic bag & wrapper",
+   "instances": 61,
+   "images": 49
+  },
+  "Polypropylene bag": {
+   "category_id": 41,
+   "supercategory": "Plastic bag & wrapper",
+   "instances": 3,
+   "images": 3
+  },
+  "Crisp packet": {
+   "category_id": 42,
+   "supercategory": "Plastic bag & wrapper",
+   "instances": 39,
+   "images": 35
+  },
+  "Spread tub": {
+   "category_id": 43,
+   "supercategory": "Plastic container",
+   "instances": 9,
+   "images": 9
+  },
+  "Tupperware": {
+   "category_id": 44,
+   "supercategory": "Plastic container",
+   "instances": 4,
+   "images": 4
+  },
+  "Disposable food container": {
+   "category_id": 45,
+   "supercategory": "Plastic container",
+   "instances": 38,
+   "images": 37
+  },
+  "Foam food container": {
+   "category_id": 46,
+   "supercategory": "Plastic container",
+   "instances": 15,
+   "images": 13
+  },
+  "Other plastic container": {
+   "category_id": 47,
+   "supercategory": "Plastic container",
+   "instances": 6,
+   "images": 6
+  },
+  "Plastic glooves": {
+   "category_id": 48,
+   "supercategory": "Plastic glooves",
+   "instances": 4,
+   "images": 4
+  },
+  "Plastic utensils": {
+   "category_id": 49,
+   "supercategory": "Plastic utensils",
+   "instances": 37,
+   "images": 29
+  },
+  "Pop tab": {
+   "category_id": 50,
+   "supercategory": "Pop tab",
+   "instances": 99,
+   "images": 71
+  },
+  "Rope & strings": {
+   "category_id": 51,
+   "supercategory": "Rope & strings",
+   "instances": 29,
+   "images": 28
+  },
+  "Scrap metal": {
+   "category_id": 52,
+   "supercategory": "Scrap metal",
+   "instances": 20,
+   "images": 12
+  },
+  "Shoe": {
+   "category_id": 53,
+   "supercategory": "Shoe",
+   "instances": 7,
+   "images": 6
+  },
+  "Squeezable tube": {
+   "category_id": 54,
+   "supercategory": "Squeezable tube",
+   "instances": 7,
+   "images": 6
+  },
+  "Plastic straw": {
+   "category_id": 55,
+   "supercategory": "Straw",
+   "instances": 157,
+   "images": 110
+  },
+  "Paper straw": {
+   "category_id": 56,
+   "supercategory": "Straw",
+   "instances": 4,
+   "images": 4
+  },
+  "Styrofoam piece": {
+   "category_id": 57,
+   "supercategory": "Styrofoam piece",
+   "instances": 112,
+   "images": 78
+  },
+  "Unlabeled litter": {
+   "category_id": 58,
+   "supercategory": "Unlabeled litter",
+   "instances": 517,
+   "images": 269
+  },
+  "Cigarette": {
+   "category_id": 59,
+   "supercategory": "Cigarette",
+   "instances": 667,
+   "images": 227
+  }
+ },
+ "categories_with_zero_instances": [
+  "Plastified paper bag"
+ ],
+ "instances_per_image_max": 90,
+ "non_image_files_under_images_dir": [
+  "batch_1/annotations.json",
+  "batch_10/annotations.json",
+  "batch_11/annotations.json",
+  "batch_12/annotations.json",
+  "batch_13/annotations.json",
+  "batch_14/annotations.json",
+  "batch_15/annotations.json",
+  "batch_2/annotations.json",
+  "batch_3/annotations.json",
+  "batch_4/annotations.json",
+  "batch_5/annotations.json",
+  "batch_6/annotations.json",
+  "batch_7/annotations.json",
+  "batch_8/annotations.json",
+  "batch_9/annotations.json"
+ ],
+ "image_files_on_disk": 1500,
+ "coco_images_missing_on_disk": [],
+ "files_on_disk_not_in_coco": [],
+ "n_missing": 0,
+ "image_files_unreadable": [],
+ "dimension_mismatch_vs_coco": [
+  {
+   "file_name": "batch_11/000039.jpg",
+   "coco": [
+    3463,
+    4618
+   ],
+   "file": [
+    4618,
+    3463
+   ]
+  },
+  {
+   "file_name": "batch_11/000098.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_11/000032.jpg",
+   "coco": [
+    2322,
+    4128
+   ],
+   "file": [
+    4128,
+    2322
+   ]
+  },
+  {
+   "file_name": "batch_11/000034.jpg",
+   "coco": [
+    2448,
+    3264
+   ],
+   "file": [
+    3264,
+    2448
+   ]
+  },
+  {
+   "file_name": "batch_11/000042.jpg",
+   "coco": [
+    3463,
+    4618
+   ],
+   "file": [
+    4618,
+    3463
+   ]
+  },
+  {
+   "file_name": "batch_11/000031.jpg",
+   "coco": [
+    2322,
+    4128
+   ],
+   "file": [
+    4128,
+    2322
+   ]
+  },
+  {
+   "file_name": "batch_11/000099.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_11/000033.jpg",
+   "coco": [
+    2322,
+    4128
+   ],
+   "file": [
+    4128,
+    2322
+   ]
+  },
+  {
+   "file_name": "batch_11/000036.jpg",
+   "coco": [
+    2448,
+    3264
+   ],
+   "file": [
+    3264,
+    2448
+   ]
+  },
+  {
+   "file_name": "batch_11/000040.jpg",
+   "coco": [
+    3463,
+    4618
+   ],
+   "file": [
+    4618,
+    3463
+   ]
+  },
+  {
+   "file_name": "batch_11/000041.jpg",
+   "coco": [
+    3463,
+    4618
+   ],
+   "file": [
+    4618,
+    3463
+   ]
+  },
+  {
+   "file_name": "batch_11/000095.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_11/000097.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_11/000029.jpg",
+   "coco": [
+    2322,
+    4128
+   ],
+   "file": [
+    4128,
+    2322
+   ]
+  },
+  {
+   "file_name": "batch_11/000030.jpg",
+   "coco": [
+    2322,
+    4128
+   ],
+   "file": [
+    4128,
+    2322
+   ]
+  },
+  {
+   "file_name": "batch_11/000027.jpg",
+   "coco": [
+    2322,
+    4128
+   ],
+   "file": [
+    4128,
+    2322
+   ]
+  },
+  {
+   "file_name": "batch_11/000096.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_11/000028.jpg",
+   "coco": [
+    2322,
+    4128
+   ],
+   "file": [
+    4128,
+    2322
+   ]
+  },
+  {
+   "file_name": "batch_11/000094.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_12/000001.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_12/000039.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_12/000010.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_12/000019.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_12/000000.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_12/000003.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_12/000032.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_12/000017.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_12/000034.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_12/000052.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_12/000020.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_12/000044.jpg",
+   "coco": [
+    3024,
+    4032
+   ],
+   "file": [
+    4032,
+    3024
+   ]
+  },
+  {
+   "file_name": "batch_12/000042.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_12/000022.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_12/000054.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_12/000014.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_12/000012.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_12/000031.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_12/000059.jpg",
+   "coco": [
+    3024,
+    4032
+   ],
+   "file": [
+    4032,
+    3024
+   ]
+  },
+  {
+   "file_name": "batch_12/000007.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_12/000033.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_12/000036.jpg",
+   "coco": [
+    2448,
+    3264
+   ],
+   "file": [
+    3264,
+    2448
+   ]
+  },
+  {
+   "file_name": "batch_12/000035.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_12/000008.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_12/000026.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_12/000038.jpg",
+   "coco": [
+    3096,
+    4128
+   ],
+   "file": [
+    4128,
+    3096
+   ]
+  },
+  {
+   "file_name": "batch_12/000023.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_12/000040.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_12/000037.jpg",
+   "coco": [
+    3024,
+    4032
+   ],
+   "file": [
+    4032,
+    3024
+   ]
+  },
+  {
+   "file_name": "batch_12/000018.jpg",
+   "coco": [
+    2988,
+    5312
+   ],
+   "file": [
+    5312,
+    2988
+   ]
+  },
+  {
+   "file_name": "batch_12/000071.jpg",
+   "coco": [
+    1512,
+    2016
+   ],
+   "file": [
+    2016,
+    1512
+   ]
+  }
+ ],
+ "n_dimension_mismatch": 560,
+ "exif_orientation_histogram": {
+  "0": 8,
+  "1": 292,
+  "3": 13,
+  "6": 558,
+  "8": 4,
+  "None": 625
+ },
+ "exif_orientation_histogram_only_where_pil_dims_mismatch_coco": {
+  "6": 556,
+  "8": 4
+ },
+ "cv2_imdecode_matches_coco_dims": 1500,
+ "cv2_imdecode_disagrees_with_coco": [],
+ "n_cv2_imdecode_disagree": 0,
+ "images_whose_polygons_exceed_coco_dims": 0,
+ "images_whose_polygons_exceed_RAW_stored_dims_by_exif_orientation": {
+  "6": 194,
+  "8": 2
+ },
+ "exif_conclusion": "TACO polygons live in the EXIF-corrected (displayed) coordinate space, which equals the COCO width/height fields. cv2.imdecode -- the loader Ultralytics uses -- applies EXIF and reproduces exactly those dimensions, so normalising polygons by COCO width/height is correct. Any loader that IGNORES EXIF (PIL Image.size based scaling, cv2.IMREAD_IGNORE_ORIENTATION) silently rotates masks by 90 or 180 degrees. Verified visually on batch_1/000104.JPG.",
+ "exact_duplicate_content_groups": 0,
+ "exact_duplicate_extra_files": 0,
+ "exact_duplicate_groups_sample": [],
+ "near_duplicate_pairs_dhash_le5": 6,
+ "provenance": {
+  "official_repo": "https://github.com/pedropro/TACO",
+  "repo_commit": "29de1a9ba05a647b83a90f18d7772e20bb23d846",
+  "official_annotations": "data/annotations.json (reviewed)",
+  "unofficial_annotations_used": false,
+  "images_obtained_via": "Zenodo DOI mirror 10.5281/zenodo.3587843 (official README alternative)",
+  "flickr_per_image_download": "blocked by HTTP 429 on original-size URLs",
+  "third_party_roboflow_export_used": false
+ },
+ "split_proposal": {
+  "note": "grouped split by duplicate unit; indoor test set NOT used for TACO tuning",
+  "target_ratio": {
+   "train": 0.8,
+   "val": 0.2
+  },
+  "method": "union-find over (exact sha256) + (dhash<=5) + (same flickr photo id) then stratified by rarest class"
+ }
+}

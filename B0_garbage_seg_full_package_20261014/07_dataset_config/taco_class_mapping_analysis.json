@@ -1,0 +1,142 @@
+{
+ "unlabeled_litter_category_ids": [
+  "58"
+ ],
+ "unlabeled_litter_instances": 517,
+ "images_containing_unlabeled_litter": 269,
+ "images_with_ONLY_unlabeled_litter": 19,
+ "images_usable_if_drop_unlabeled_only": 1481,
+ "images_usable_if_drop_all_touching_unlabeled": 1231,
+ "scenario_A_core_only": {
+  "tiers": [
+   "CONFIRMED_CANDIDATE"
+  ],
+  "instances_per_target_class": {
+   "bottle": 335,
+   "box": 201,
+   "can": 263,
+   "cigarette_butt": 667,
+   "food_waste": 8,
+   "other": 273,
+   "paper": 136,
+   "plastic_bag": 95,
+   "wrapper": 299
+  },
+  "total_mapped_instances": 2277,
+  "unmapped_instances": 2507
+ },
+ "scenario_B_core_plus_provisional": {
+  "tiers": [
+   "CONFIRMED_CANDIDATE",
+   "PROVISIONAL"
+  ],
+  "instances_per_target_class": {
+   "bottle": 439,
+   "box": 251,
+   "can": 273,
+   "cigarette_butt": 667,
+   "food_waste": 8,
+   "other": 273,
+   "paper": 246,
+   "plastic_bag": 546,
+   "wrapper": 361
+  },
+  "total_mapped_instances": 3064,
+  "unmapped_instances": 1720
+ },
+ "scenario_C_full_9class_with_other_ratified": {
+  "tiers": [
+   "CONFIRMED_CANDIDATE",
+   "PROVISIONAL",
+   "OTHER_CANDIDATE"
+  ],
+  "instances_per_target_class": {
+   "bottle": 439,
+   "box": 251,
+   "can": 273,
+   "cigarette_butt": 667,
+   "food_waste": 8,
+   "other": 1471,
+   "paper": 246,
+   "plastic_bag": 546,
+   "wrapper": 361
+  },
+  "total_mapped_instances": 4262,
+  "unmapped_instances": 522,
+  "caveat": "requires D1 (other ratified) + D2..D6 human decisions"
+ },
+ "indoor_1444_class_instance_count": {
+  "bottle": 99,
+  "box": 584,
+  "can": 9,
+  "cigarette_butt": 121,
+  "food_waste": 26,
+  "other": 1313,
+  "paper": 674,
+  "plastic_bag": 774,
+  "wrapper": 215
+ },
+ "taco_native_classes": 60,
+ "taco_native_categories_lt10_instances": [
+  "Aluminium blister pack",
+  "Battery",
+  "Carded blister pack",
+  "Food waste",
+  "Glass cup",
+  "Glass jar",
+  "Other plastic container",
+  "Other plastic cup",
+  "Paper straw",
+  "Pizza box",
+  "Plastic glooves",
+  "Plastified paper bag",
+  "Polypropylene bag",
+  "Shoe",
+  "Six pack rings",
+  "Spread tub",
+  "Squeezable tube",
+  "Toilet tube",
+  "Tupperware"
+ ],
+ "taco_native_categories_with_zero_instances": [
+  "Plastified paper bag"
+ ],
+ "taco_native_min_instances": 0,
+ "taco_native_max_instances": 667,
+ "taco_native_imbalance_ratio": 667.0,
+ "split_proposal": {
+  "method": "greedy group split; group = union over duplicate flickr_url / flickr photo id",
+  "n_groups": 1495,
+  "n_images": 1500,
+  "val_images": 300,
+  "train_images": 1200,
+  "val_ratio": 0.2,
+  "rarest_class_recall_in_val": {
+   "food_waste": {
+    "got": 4,
+    "target": 1,
+    "total": 7
+   },
+   "can": {
+    "got": 72,
+    "target": 36,
+    "total": 179
+   },
+   "bottle": {
+    "got": 97,
+    "target": 64,
+    "total": 322
+   },
+   "cigarette_butt": {
+    "got": 71,
+    "target": 45,
+    "total": 227
+   }
+  },
+  "constraints": [
+   "indoor test split is NOT used for TACO model selection",
+   "duplicate groups never straddle train/val",
+   "garbage_seg_merged_full1444 is read-only and untouched"
+  ]
+ }
+}
