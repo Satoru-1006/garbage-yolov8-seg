@@ -1,0 +1,127 @@
+# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+
+task: segment
+mode: train
+
+# Train settings -------------------------------------------------------------------------------------------------------
+model: /home/xmv/garbage_yolov8_seg/yolov8s-seg.pt
+data: /home/xmv/garbage_yolov8_seg/data.yaml
+epochs: 230
+time:
+patience: 35
+batch: 16 # 固定 16，严防显存溢出
+imgsz: 800 # 提升到 800 抓取烟头等小目标细节
+save: True
+save_period: 20
+cache: ram # 缓存到内存（若提示内存不足会自动平滑回退）
+device: 0
+workers: 8
+project: /home/xmv/garbage_yolov8_seg/runs/segment
+name: garbage_seg_optimal_v2 # 独立新目录
+exist_ok: False
+pretrained: True
+optimizer: AdamW # 显式使用 AdamW，增强对噪声标注的抵抗力
+verbose: True
+seed: 0
+deterministic: False
+single_cls: False
+rect: False
+cos_lr: True # 开启余弦退火学习率
+close_mosaic: 15 # 倒数 15 轮关闭拼图，细化边缘
+resume: False
+amp: True
+fraction: 1.0
+profile: False
+freeze:
+multi_scale: False # 【核心安全项】彻底关闭动态多尺度，消除显存暴冲
+compile: False
+
+# Segmentation
+overlap_mask: True
+mask_ratio: 4
+
+# Classification
+dropout: 0.0
+
+# Val/Test settings ----------------------------------------------------------------------------------------------------
+val: True
+split: val
+save_json: False
+conf:
+iou: 0.7
+max_det: 300
+half: False
+dnn: False
+plots: True
+
+# Predict settings -----------------------------------------------------------------------------------------------------
+source:
+vid_stride: 1
+stream_buffer: False
+visualize: False
+augment: False
+agnostic_nms: False
+classes:
+retina_masks: True
+embed:
+
+# Visualize settings ---------------------------------------------------------------------------------------------------
+show: False
+save_frames: False
+save_txt: False
+save_conf: False
+save_crop: False
+show_labels: True
+show_conf: True
+show_boxes: True
+line_width:
+
+# Export settings ------------------------------------------------------------------------------------------------------
+format: torchscript
+keras: False
+optimize: False
+int8: False
+dynamic: False
+simplify: True
+opset:
+workspace:
+nms: False
+
+# Hyperparameters ------------------------------------------------------------------------------------------------------
+lr0: 0.001 # 匹配 AdamW 的初始基准学习率
+lrf: 0.01
+momentum: 0.937
+weight_decay: 0.001 # 翻倍权重衰减，抑制过拟合
+warmup_epochs: 3.0
+warmup_momentum: 0.8
+warmup_bias_lr: 0.1
+box: 7.5
+cls: 0.5
+dfl: 1.5
+pose: 12.0
+kobj: 1.0
+nbs: 64
+hsv_h: 0.015
+hsv_s: 0.7
+hsv_v: 0.4
+degrees: 25.0 # 适度旋转
+translate: 0.15
+scale: 0.5
+shear: 0.0
+perspective: 0.0
+flipud: 0.5 # 50% 上下翻转
+fliplr: 0.5 # 50% 左右翻转
+bgr: 0.0
+mosaic: 1.0
+mixup: 0.1 # 图像透明叠加，破坏死记特征
+cutmix: 0.0
+copy_paste: 0.3 # 分割抠图粘贴，平衡密集目标
+copy_paste_mode: flip
+auto_augment: randaugment
+erasing: 0.4
+
+# Custom config.yaml ---------------------------------------------------------------------------------------------------
+cfg:
+
+# Tracker settings ------------------------------------------------------------------------------------------------------
+tracker: botsort.yaml

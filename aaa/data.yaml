@@ -1,0 +1,38 @@
+path: /home/xmv/garbage_yolov8_seg/datasets
+
+train:
+  - box_v3/images/train
+  - can/images/train
+  - cigarette/images/train
+  - foodwaste/images/train
+  - garbage/images/train
+  - paper/images/train
+  - paper_src4/images/train
+  - plastic/images/train
+  - taco/images/train
+  - waste/images/train
+  - waste_food_paper/images/train
+
+val:
+  - box_v3/images/val
+  - can/images/val
+  - cigarette/images/val
+  - foodwaste/images/val
+  - garbage/images/val
+  - paper/images/val
+  - paper_src4/images/val
+  - plastic/images/val
+  - taco/images/val
+  - waste/images/val
+  - waste_food_paper/images/val
+
+names:
+  0: bottle
+  1: box
+  2: can
+  3: cigarette_butt
+  4: food_waste
+  5: other
+  6: paper
+  7: plastic_bag
+  8: wrapper
